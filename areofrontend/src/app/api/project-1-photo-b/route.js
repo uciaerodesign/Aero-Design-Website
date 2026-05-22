@@ -1,7 +1,12 @@
 import { createReadStream, existsSync } from "node:fs";
 import path from "node:path";
 
-const photoPath = path.join(process.cwd(), "..", "media", "1760062164699.jpeg");
+const photoPath = path.join(
+  process.cwd(),
+  "public",
+  "media",
+  "project-1-photo-b.jpeg"
+);
 
 export async function GET() {
   if (!existsSync(photoPath)) {

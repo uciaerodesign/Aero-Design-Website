@@ -2,10 +2,10 @@ import { createReadStream, existsSync, statSync } from "node:fs";
 import path from "node:path";
 
 const videoPath = path.join(
-  "/Users",
-  "rongzhiyuan",
-  "Downloads",
-  "linkedin-video.mp4"
+  process.cwd(),
+  "public",
+  "media",
+  "project-1-video.mp4"
 );
 
 export async function GET(request) {

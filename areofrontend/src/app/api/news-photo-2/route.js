@@ -2,10 +2,10 @@ import { createReadStream, existsSync } from "node:fs";
 import path from "node:path";
 
 const photoPath = path.join(
-  "/Users",
-  "rongzhiyuan",
-  "Downloads",
-  "Screenshot 2026-04-29 at 22.42.05_副本.jpeg"
+  process.cwd(),
+  "public",
+  "media",
+  "news-photo-2.jpeg"
 );
 
 export async function GET() {

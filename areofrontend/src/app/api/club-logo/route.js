@@ -3,7 +3,7 @@ import path from "node:path";
 
 const logoPath = path.join(
   process.cwd(),
-  "..",
+  "public",
   "media",
   "aerodesignuci_logo.jpeg"
 );

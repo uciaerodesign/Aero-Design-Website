@@ -3,9 +3,9 @@ import path from "node:path";
 
 const videoPath = path.join(
   process.cwd(),
-  "..",
+  "public",
   "media",
-  "aero-design-uci-25-26-zot-force-one-maiden-flight-test-1080-ytshorts.savetube.me.mp4"
+  "hero-video.mp4"
 );
 
 export async function GET(request) {

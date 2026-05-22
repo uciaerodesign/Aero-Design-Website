@@ -3,9 +3,9 @@ import path from "node:path";
 
 const teamMembersPhotoPath = path.join(
   process.cwd(),
-  "..",
+  "public",
   "media",
-  "1773036533662.jpeg"
+  "team-members.jpeg"
 );
 
 export async function GET() {
