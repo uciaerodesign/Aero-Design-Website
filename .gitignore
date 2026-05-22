@@ -1,0 +1,14 @@
+.DS_Store
+.vscode/
+__pycache__/
+*.py[cod]
+
+# Local development artifacts
+areofrontend/node_modules/
+areofrontend/.next/
+areofrontend/out/
+areofrontend/.env*
+aerobackend/**/__pycache__/
+
+# Empty nested repo placeholder
+project/
