@@ -1,28 +1,5 @@
 import Image from "next/image";
 
-function SectionBackgroundVideo({
-  opacityClass = "opacity-[0.24]",
-  overlayClass = "bg-[rgba(0,0,0,0.48)]",
-  objectPosition = "center center",
-}) {
-  return (
-    <>
-      <video
-        className={`absolute inset-0 h-full w-full object-cover ${opacityClass}`}
-        style={{ objectPosition }}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-      >
-        <source src="/api/section-background-video" type="video/mp4" />
-      </video>
-      <div className={`absolute inset-0 ${overlayClass}`} />
-    </>
-  );
-}
-
 export default function Home() {
   const navigationItems = [
     { label: "Homepage", href: "#explore" },
@@ -78,8 +55,8 @@ export default function Home() {
             transform: "scale(1.04)",
           }}
           autoPlay
-          muted
           loop
+          muted
           playsInline
           preload="auto"
         >
@@ -154,7 +131,6 @@ export default function Home() {
         id="explore"
         className="relative z-10 overflow-hidden border-t border-white/10 px-4 py-14 sm:px-6 sm:py-20"
       >
-        <SectionBackgroundVideo opacityClass="opacity-[0.28]" />
         <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
           <div className="relative z-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_28px_80px_rgba(0,0,0,0.28)] sm:rounded-[2rem]">
             <Image
@@ -224,7 +200,6 @@ export default function Home() {
         id="projects"
         className="relative z-10 overflow-hidden border-t border-white/10 px-4 py-14 sm:px-6 sm:py-20"
       >
-        <SectionBackgroundVideo opacityClass="opacity-[0.28]" />
         <div className="relative z-10 mx-auto max-w-6xl">
           <p className="text-xs uppercase tracking-[0.28em] text-sky-200/80 sm:text-sm sm:tracking-[0.4em]">
             Projects
@@ -302,7 +277,6 @@ export default function Home() {
         id="news"
         className="relative z-10 overflow-hidden border-t border-white/10 px-4 py-14 sm:px-6 sm:py-20"
       >
-        <SectionBackgroundVideo opacityClass="opacity-[0.28]" />
         <div className="relative z-10 mx-auto max-w-6xl">
           <p className="text-xs uppercase tracking-[0.28em] text-sky-200/80 sm:text-sm sm:tracking-[0.4em]">
             News
@@ -378,7 +352,7 @@ export default function Home() {
         id="links"
         className="relative z-10 overflow-hidden border-t border-white/10 px-4 py-14 sm:px-6 sm:py-20"
       >
-        <SectionBackgroundVideo opacityClass="opacity-[0.28]" />
+        
         <div className="relative z-10 mx-auto max-w-6xl">
           <p className="text-xs uppercase tracking-[0.28em] text-sky-200/80 sm:text-sm sm:tracking-[0.4em]">
             Contact
