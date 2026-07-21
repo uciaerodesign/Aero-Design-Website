@@ -18,6 +18,54 @@ export default function Home() {
     { label: "Contact", href: "#contact" },
   ];
 
+  const teamLeaders = [
+    {
+      name: "Andrew Zhang",
+      title: "Project Manager",
+      image: "/media/team-leaders/andrew-zhang.jpg",
+    },
+    {
+      name: "Samith Varamballi",
+      title: "Structures Chief Engineer",
+      image: "/media/team-leaders/samith-varamballi.jpg",
+    },
+    {
+      name: "Jibin Jiju",
+      title: "Aerodynamics Chief Engineer",
+      image: "/media/team-leaders/jibin-jiju.jpg",
+    },
+    {
+      name: "Ani Lim",
+      title: "Operations Lead",
+      image: "/media/team-leaders/ani-lim.jpg",
+    },
+    {
+      name: "Caden Chang",
+      title: "Aerodynamics Lead",
+      image: "/media/team-leaders/caden-chang.jpg",
+    },
+    {
+      name: "Eva Maya",
+      title: "Manufacturing Lead",
+      image: "/media/team-leaders/eva-maya.jpg",
+    },
+    {
+      name: "Sean Pelletier",
+      title: "Propulsion & Avionics Co-Lead",
+      image: "/media/team-leaders/sean-pelletier.jpg",
+    },
+    {
+      name: "Zachary Vogelsang",
+      title: "Structures Co-Lead",
+      image: "/media/team-leaders/zachary-vogelsang.jpg",
+    },
+    {
+      name: "Sophia Vieira",
+      title: "Structures Co-Lead",
+      image: "/media/team-leaders/sophia-vieira.jpg",
+    },
+  ];
+
   const journeyTabs = [
     {
       year: "2025-2026",
@@ -216,19 +264,14 @@ export default function Home() {
             <p className="section-kicker">THE TEAM</p>
             <h2 className="section-title">The Students Behind The Aircraft</h2>
             <p className="body-copy">
-              Just because we&apos;ve hit the ground running this school year
-              doesn&apos;t mean that summer was downtime for us, though. Our team
-              stayed productive throughout the break, laying the groundwork for
-              everything we&apos;re accomplishing now.
+              UCI Aero Design is led by student engineers and operators who turn
+              ideas into a competition-ready aircraft. Our leaders coordinate
+              design, manufacturing, testing, logistics, and outreach across every
+              stage of the build season.
             </p>
             <p className="body-copy mt-4">
-              Both our Aerodynamics and P&amp;A subteams spent the season
-              brainstorming designs for this competition year, while our Structures
-              team worked alongside them to integrate those designs into CAD for our
-              Manufacturing team to later execute. Our brand new Operations subteam
-              has also been working hard to iron out the logistics behind the scenes
-              - with every subteam coming together to form the UCI Cargo Plane team
-              that we know and love.
+              Meet the team leaders guiding Zot Force One and the next generation of
+              UCI aircraft.
             </p>
             <a href="#contact" className="inline-flex-button mt-7">
               Contact The Team
@@ -245,6 +288,32 @@ export default function Home() {
               unoptimized
             />
           </MediaFrame>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-6xl sm:mt-16">
+          <div className="grid gap-6 md:grid-cols-2">
+            {teamLeaders.map((member) => (
+              <article key={member.name} className="leader-card">
+                <div className="leader-photo">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name}, ${member.title}`}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-5 sm:p-6">
+                  <h3 className="text-xl font-semibold tracking-[0.03em] text-white sm:text-2xl">
+                    {member.name}
+                  </h3>
+                  <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-[#ffd660]">
+                    {member.title}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
