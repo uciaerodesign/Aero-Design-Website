@@ -291,7 +291,7 @@ export default function Home() {
         </div>
 
         <div className="mx-auto mt-12 max-w-6xl sm:mt-16">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {teamLeaders.map((member) => (
               <article key={member.name} className="leader-card">
                 <div className="leader-photo">
@@ -303,11 +303,11 @@ export default function Home() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-5 sm:p-6">
-                  <h3 className="text-xl font-semibold tracking-[0.03em] text-white sm:text-2xl">
+                <div className="p-4 sm:p-5">
+                  <h3 className="text-lg font-semibold tracking-[0.03em] text-white sm:text-xl">
                     {member.name}
                   </h3>
-                  <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-[#ffd660]">
+                  <p className="mt-2 text-xs font-semibold uppercase leading-5 tracking-[0.14em] text-[#ffd660]">
                     {member.title}
                   </p>
                 </div>

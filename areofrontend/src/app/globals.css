@@ -224,9 +224,15 @@ body::selection {
 .leader-photo {
   position: relative;
   aspect-ratio: 4 / 5;
-  min-height: 18rem;
+  min-height: 13.5rem;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 1024px) {
+  .leader-photo {
+    min-height: 15rem;
+  }
 }
 
 .form-label {
