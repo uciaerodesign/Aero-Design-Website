@@ -82,7 +82,7 @@ export default function Home() {
       level: "Chief Engineers",
       groups: [
         {
-          title: "Structures Chief Engineer",
+          title: "Structures & Manufacturing Chief Engineer",
           names: ["Samith Varamballi"],
         },
         {
@@ -99,20 +99,68 @@ export default function Home() {
       level: "Subteam Leads",
       groups: [
         {
-          title: "Aerodynamics Lead",
-          names: ["Caden Chang"],
+          title: "Structures W&T Lead",
+          names: ["Zachary Vogelsang"],
+        },
+        {
+          title: "Structures F Lead",
+          names: ["Sophia Vieira"],
         },
         {
           title: "Manufacturing Lead",
           names: ["Eva Maya"],
         },
         {
-          title: "Propulsion & Avionics Co-Lead",
-          names: ["Sean Pelletier"],
+          title: "Propulsion & Avionics Leads",
+          names: ["Sean Pelletier", "Alexey Eleev"],
         },
         {
-          title: "Structures Co-Leads",
-          names: ["Zachary Vogelsang", "Sophia Vieira"],
+          title: "Aerodynamics Lead",
+          names: ["Caden Chang"],
+        },
+        {
+          title: "Operations & Outreach",
+          names: [
+            "Leon Li",
+            "Haley Lam",
+            "Adani Ahmad",
+            "Castor Yuan",
+            "Zhiyuan Rong",
+            "Annie Dinh",
+          ],
+        },
+      ],
+    },
+    {
+      level: "Engineering Teams",
+      groups: [
+        {
+          title: "Structures Engineers",
+          names: ["Abdullah Franklin", "Kairecse Monroy", "Ricardo Vera", "Ethan Lee"],
+        },
+        {
+          title: "Structures Engineers",
+          names: ["Preston Hariadi", "Elina Nazhadi", "Samantha Esparza", "Abhinaav Balaji"],
+        },
+        {
+          title: "Manufacturing Engineers",
+          names: ["Smaran Mishra", "Mina Salib", "Katie Lien", "Recva Patel", "Shishir Subramanya"],
+        },
+        {
+          title: "P&A Engineers",
+          names: ["Likhith Bollam", "Lingbo Wan", "Brennan Dupart"],
+        },
+        {
+          title: "Aerodynamics Engineers",
+          names: [
+            "Brian Chen",
+            "Anan Bagdi",
+            "Anay Kamboj",
+            "Ella Delgado",
+            "Austin Hsu",
+            "Marcus Perry",
+            "Haris Asic",
+          ],
         },
       ],
     },

@@ -283,7 +283,7 @@ body::selection {
 
 @media (min-width: 700px) {
   .org-groups {
-    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
   }
 }
 
@@ -291,7 +291,7 @@ body::selection {
   border-radius: 0.85rem;
   border: 1px solid rgba(255, 214, 96, 0.2);
   background: rgba(4, 18, 47, 0.74);
-  padding: 1rem;
+  padding: 0.9rem;
   text-align: center;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
@@ -299,7 +299,7 @@ body::selection {
 }
 
 .org-node h4 {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 700;
   line-height: 1.35;
   letter-spacing: 0.04em;
@@ -307,10 +307,14 @@ body::selection {
 }
 
 .org-node p {
-  margin-top: 0.45rem;
-  font-size: 0.88rem;
-  line-height: 1.45;
+  margin-top: 0.34rem;
+  font-size: 0.8rem;
+  line-height: 1.32;
   color: rgba(255, 255, 255, 0.86);
+}
+
+.org-node p:first-of-type {
+  margin-top: 0.55rem;
 }
 
 .news-card,
