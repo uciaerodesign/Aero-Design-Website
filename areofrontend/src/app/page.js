@@ -118,6 +118,11 @@ export default function Home() {
           title: "Aerodynamics Lead",
           names: ["Caden Chang"],
         },
+      ],
+    },
+    {
+      level: "Operations Branch",
+      groups: [
         {
           title: "Operations & Outreach",
           names: [
