@@ -191,7 +191,8 @@ export default function Home() {
   const newsItems = [
     {
       label: "Competition",
-      title: "Zot Force One touched down after SAE Aero Design West",
+      date: "March 2026",
+      title: "ZOT FORCE ONE TOUCHED DOWN AFTER SAE AERO DESIGN WEST",
       summary:
         "The team returned from Fort Worth after competing in Regular class, bringing home a season defined by resilience, flight-line experience, and a stronger foundation for the next aircraft.",
       images: [
@@ -201,15 +202,6 @@ export default function Home() {
         { src: "/api/news-photo-1d", alt: "Aero Design flight line photo" },
       ],
       href: "https://www.linkedin.com/company/aerodesignuci/posts/",
-    },
-    {
-      label: "Recruitment",
-      title: "Applications open for future aircraft builders",
-      summary:
-        "Aero Design welcomes students from every major and subteam interest, from technical design and manufacturing to operations, sponsorship, and outreach.",
-      imageSrc: "/api/news-photo-2",
-      imageAlt: "Aero Design recruitment poster",
-      href: "https://oel.eng.uci.edu/2026/04/14/aero-design-uci-recruitment-for-2026-2027/",
     },
   ];
 
@@ -585,6 +577,9 @@ export default function Home() {
                 )}
                 <div className="p-5 sm:p-7">
                   <p className="card-kicker">{item.label}</p>
+                  <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/48">
+                    {item.date}
+                  </p>
                   <h3 className="mt-3 text-xl font-semibold tracking-[0.04em] text-white sm:mt-4 sm:text-2xl">
                     {item.title}
                   </h3>
