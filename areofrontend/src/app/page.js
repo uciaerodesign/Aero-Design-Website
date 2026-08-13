@@ -121,23 +121,7 @@ export default function Home() {
       ],
     },
     {
-      level: "Operations Branch",
-      groups: [
-        {
-          title: "Operations & Outreach",
-          names: [
-            "Leon Li",
-            "Haley Lam",
-            "Adani Ahmad",
-            "Castor Yuan",
-            "Zhiyuan Rong",
-            "Annie Dinh",
-          ],
-        },
-      ],
-    },
-    {
-      level: "Engineering Teams",
+      level: "Engineering & Operations Teams",
       groups: [
         {
           title: "Structures Engineers",
@@ -165,6 +149,17 @@ export default function Home() {
             "Austin Hsu",
             "Marcus Perry",
             "Haris Asic",
+          ],
+        },
+        {
+          title: "Operations & Outreach",
+          names: [
+            "Leon Li",
+            "Haley Lam",
+            "Adani Ahmad",
+            "Castor Yuan",
+            "Zhiyuan Rong",
+            "Annie Dinh",
           ],
         },
       ],
