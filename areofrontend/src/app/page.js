@@ -272,13 +272,13 @@ export default function Home() {
             </p>
 
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3 sm:mt-12">
-              <a href="#intro" className="crystal-button inline-flex items-center justify-center px-8 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white transition duration-300 hover:-translate-y-1 hover:bg-white/24 sm:px-10 sm:py-4">
+              <a href="#intro" className="crystal-button hero-button">
                 Explore
               </a>
-              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="hero-social-button">
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="hero-social-button hero-button">
                 Instagram
               </a>
-              <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className="hero-social-button">
+              <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className="hero-social-button hero-button">
                 LinkedIn
               </a>
             </div>
