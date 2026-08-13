@@ -4,6 +4,8 @@ import ContactForm from "./ContactForm";
 const linktreeUrl =
   "https://linktr.ee/uciaerodesign?utm_source=linktree_profile_share&ltsid=6b182c60-f657-419e-b3a5-d9c96b646fc1";
 const zotFunderUrl = "https://zotfunder.give.uci.edu/project/47653";
+const instagramUrl = "https://www.instagram.com/aerodesignuci/";
+const linkedInUrl = "https://www.linkedin.com/company/aerodesignuci/posts/?feedView=all";
 const aniLimGmailUrl =
   "https://mail.google.com/mail/?view=cm&fs=1&to=anil@uci.edu";
 
@@ -66,13 +68,63 @@ export default function Home() {
     },
   ];
 
+  const orgChart = [
+    {
+      level: "Program",
+      groups: [
+        {
+          title: "Project Manager",
+          names: ["Andrew Zhang"],
+        },
+      ],
+    },
+    {
+      level: "Chief Engineers",
+      groups: [
+        {
+          title: "Structures Chief Engineer",
+          names: ["Samith Varamballi"],
+        },
+        {
+          title: "Aerodynamics Chief Engineer",
+          names: ["Jibin Jiju"],
+        },
+        {
+          title: "Operations Lead",
+          names: ["Ani Lim"],
+        },
+      ],
+    },
+    {
+      level: "Subteam Leads",
+      groups: [
+        {
+          title: "Aerodynamics Lead",
+          names: ["Caden Chang"],
+        },
+        {
+          title: "Manufacturing Lead",
+          names: ["Eva Maya"],
+        },
+        {
+          title: "Propulsion & Avionics Co-Lead",
+          names: ["Sean Pelletier"],
+        },
+        {
+          title: "Structures Co-Leads",
+          names: ["Zachary Vogelsang", "Sophia Vieira"],
+        },
+      ],
+    },
+  ];
+
   const journeyTabs = [
     {
       year: "2025-2026",
       plane: "Zot Force One",
       status: "SAE Aero Design West",
       copy:
-        "As of March 2026, UCI Aero Design has finally touched down back in Irvine after an incredible weekend in Fort Worth, Texas! It was an honor to stand on the flight line at the SAE Aero Design West competition. We competed alongside many talented colleges and universities that built planes from Micro to Advanced class.",
+        "As of March 2026, Aero Design at UCI has finally touched down back in Irvine after an incredible weekend in Fort Worth, Texas! It was an honor to stand on the flight line at the SAE Aero Design West competition. We competed alongside many talented colleges and universities that built planes from Micro to Advanced class.",
     },
     {
       year: "2024-2025",
@@ -90,10 +142,10 @@ export default function Home() {
       summary:
         "The team returned from Fort Worth after competing in Regular class, bringing home a season defined by resilience, flight-line experience, and a stronger foundation for the next aircraft.",
       images: [
-        { src: "/api/news-photo-1a", alt: "UCI Aero Design competition photo" },
-        { src: "/api/news-photo-1b", alt: "UCI Aero Design aircraft photo" },
-        { src: "/api/news-photo-1c", alt: "UCI Aero Design team photo" },
-        { src: "/api/news-photo-1d", alt: "UCI Aero Design flight line photo" },
+        { src: "/api/news-photo-1a", alt: "Aero Design competition photo" },
+        { src: "/api/news-photo-1b", alt: "Aero Design aircraft photo" },
+        { src: "/api/news-photo-1c", alt: "Aero Design team photo" },
+        { src: "/api/news-photo-1d", alt: "Aero Design flight line photo" },
       ],
       href: "https://www.linkedin.com/company/aerodesignuci/posts/",
     },
@@ -103,7 +155,7 @@ export default function Home() {
       summary:
         "Aero Design welcomes students from every major and subteam interest, from technical design and manufacturing to operations, sponsorship, and outreach.",
       imageSrc: "/api/news-photo-2",
-      imageAlt: "UCI Aero Design recruitment poster",
+      imageAlt: "Aero Design recruitment poster",
       href: "https://oel.eng.uci.edu/2026/04/14/aero-design-uci-recruitment-for-2026-2027/",
     },
   ];
@@ -124,7 +176,7 @@ export default function Home() {
   const contactLinks = [
     {
       label: "Linktree",
-      title: "UCI Aero Design Links",
+      title: "Aero Design @ UCI Links",
       description: "Find the team's active social links, forms, and shared resources.",
       href: linktreeUrl,
       action: "Open Linktree",
@@ -177,7 +229,7 @@ export default function Home() {
               <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-white/18 bg-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.24)] backdrop-blur-md sm:h-14 sm:w-14">
                 <Image
                   src="/api/club-logo"
-                  alt="UCI Aero Design logo"
+                  alt="Aero Design @ UCI logo"
                   width={56}
                   height={56}
                   className="h-full w-full object-cover"
@@ -189,7 +241,7 @@ export default function Home() {
                   UCI
                 </p>
                 <p className="text-xs font-medium uppercase tracking-[0.18em] text-white sm:text-sm">
-                  Aero Design
+                  Aero Design @ UCI
                 </p>
               </div>
             </div>
@@ -213,7 +265,7 @@ export default function Home() {
               University of California, Irvine
             </p>
             <h1 className="max-w-4xl text-[2.4rem] font-semibold uppercase leading-[1.08] tracking-[0.08em] text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)] sm:text-7xl sm:tracking-[0.12em] md:text-8xl">
-              UCI Aero Design
+              Aero Design @ UCI
             </h1>
             <p className="mt-5 max-w-2xl text-sm font-semibold uppercase tracking-[0.22em] text-[#ffd660] sm:mt-6 sm:text-lg sm:tracking-[0.28em]">
               Zot From Above
@@ -222,6 +274,12 @@ export default function Home() {
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3 sm:mt-12">
               <a href="#intro" className="crystal-button inline-flex items-center justify-center px-8 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white transition duration-300 hover:-translate-y-1 hover:bg-white/24 sm:px-10 sm:py-4">
                 Explore
+              </a>
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="hero-social-button">
+                Instagram
+              </a>
+              <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className="hero-social-button">
+                LinkedIn
               </a>
             </div>
           </div>
@@ -233,7 +291,7 @@ export default function Home() {
           <MediaFrame>
             <Image
               src="/api/team-photo"
-              alt="UCI Aero Design team standing behind their aircraft"
+              alt="Aero Design @ UCI team standing behind their aircraft"
               width={1158}
               height={772}
               className="h-full w-full object-cover"
@@ -245,7 +303,7 @@ export default function Home() {
             <p className="section-kicker">INTRO</p>
             <h2 className="section-title">Undergraduate Aircraft Design At UCI</h2>
             <p className="body-copy">
-              UCI Aero Design is an undergraduate project team at the University of
+              Aero Design at UCI is an undergraduate project team at the University of
               California, Irvine that designs, builds, and flies electric
               remote-controlled aircraft for SAE Aero Design West.
             </p>
@@ -264,7 +322,7 @@ export default function Home() {
             <p className="section-kicker">THE TEAM</p>
             <h2 className="section-title">The Students Behind The Aircraft</h2>
             <p className="body-copy">
-              UCI Aero Design is led by student engineers and operators who turn
+              Aero Design at UCI is led by student engineers and operators who turn
               ideas into a competition-ready aircraft. Our leaders coordinate
               design, manufacturing, testing, logistics, and outreach across every
               stage of the build season.
@@ -281,7 +339,7 @@ export default function Home() {
           <MediaFrame>
             <Image
               src="/api/team-members-photo"
-              alt="UCI Aero Design team members standing beside their aircraft"
+              alt="Aero Design @ UCI team members standing beside their aircraft"
               width={576}
               height={768}
               className="h-full w-full object-cover"
@@ -291,6 +349,45 @@ export default function Home() {
         </div>
 
         <div className="mx-auto mt-12 max-w-6xl sm:mt-16">
+          <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="card-kicker">Organization Chart</p>
+              <h3 className="mt-3 text-2xl font-semibold tracking-[0.04em] text-white sm:text-3xl">
+                2026-2027 Team Structure
+              </h3>
+            </div>
+            <p className="max-w-xl text-sm leading-7 text-white/64">
+              A snapshot of how the program, chief engineers, and subteam leads
+              coordinate the aircraft cycle.
+            </p>
+          </div>
+
+          <div className="org-chart">
+            {orgChart.map((row) => (
+              <div className="org-row" key={row.level}>
+                <p className="org-level">{row.level}</p>
+                <div className="org-groups">
+                  {row.groups.map((group) => (
+                    <article className="org-node" key={group.title}>
+                      <h4>{group.title}</h4>
+                      {group.names.map((name) => (
+                        <p key={name}>{name}</p>
+                      ))}
+                    </article>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-6xl sm:mt-16">
+          <div className="mb-7">
+            <p className="card-kicker">Leadership</p>
+            <h3 className="mt-3 text-2xl font-semibold tracking-[0.04em] text-white sm:text-3xl">
+              2026-2027 Leads
+            </h3>
+          </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {teamLeaders.map((member) => (
               <article key={member.name} className="leader-card">
@@ -369,7 +466,7 @@ export default function Home() {
                 <MediaFrame>
                   <Image
                     src="/api/project-1-photo-a"
-                    alt="UCI Aero Design aircraft testing"
+                    alt="Aero Design aircraft testing"
                     width={1365}
                     height={768}
                     className="h-full w-full object-cover"
@@ -379,7 +476,7 @@ export default function Home() {
                 <MediaFrame>
                   <Image
                     src="/api/project-1-photo-b"
-                    alt="UCI Aero Design project presentation"
+                    alt="Aero Design project presentation"
                     width={1160}
                     height={768}
                     className="h-full w-full object-cover"
@@ -396,7 +493,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <p className="section-kicker">NEWS</p>
           <div className="mt-4 max-w-2xl">
-            <h2 className="section-title">Latest Updates From Aero Design UCI</h2>
+            <h2 className="section-title">Latest Updates From Aero Design @ UCI</h2>
             <p className="body-copy">
               A compact news board for competition recaps, recruitment posts, and
               major team milestones.
@@ -480,7 +577,7 @@ export default function Home() {
           <MediaFrame>
             <Image
               src="/api/team-photo"
-              alt="UCI Aero Design team and aircraft"
+              alt="Aero Design @ UCI team and aircraft"
               width={1158}
               height={772}
               className="h-full w-full object-cover"
@@ -492,7 +589,7 @@ export default function Home() {
             <p className="section-kicker">SPONSOR US</p>
             <h2 className="section-title">Fuel The Innovation Of Tomorrow&apos;s Aerospace Leaders</h2>
             <p className="body-copy">
-              Partner with UCI Aero Design and directly support the next generation
+              Partner with Aero Design at UCI and directly support the next generation
               of engineers. Your investment provides our team with the cutting-edge
               materials, manufacturing resources, and software needed to push the
               boundaries of UAV technology.
@@ -517,7 +614,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <p className="section-kicker">CONTACT</p>
           <div className="mt-4 max-w-2xl">
-            <h2 className="section-title">Stay Connected With Aero Design UCI</h2>
+            <h2 className="section-title">Stay Connected With Aero Design @ UCI</h2>
             <p className="body-copy">
               Follow the team, send direct inquiries, or start a sponsorship
               conversation with the people keeping the aircraft program moving.

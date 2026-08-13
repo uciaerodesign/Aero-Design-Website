@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "UCI Aero Design",
-  description: "Official website for the UCI Aero Design Club",
+  title: "Aero Design @ UCI",
+  description: "Official website for Aero Design at UCI",
   icons: {
     icon: "/icon.png?v=3",
     shortcut: "/icon.png?v=3",

@@ -10,7 +10,7 @@ export default function ContactForm() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    const subject = `UCI Aero Design Inquiry from ${name}`;
+    const subject = `Aero Design @ UCI Inquiry from ${name}`;
     const body = [
       `Name: ${name}`,
       `Reply Email: ${replyEmail}`,

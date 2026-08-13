@@ -157,6 +157,33 @@ body::selection {
   background: rgba(255, 255, 255, 0.12);
 }
 
+.hero-social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.75rem 1.3rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.hero-social-button:hover {
+  transform: translateY(-0.25rem);
+  border-color: rgba(255, 214, 96, 0.52);
+  background: rgba(255, 214, 96, 0.14);
+}
+
 .timeline-panel {
   position: relative;
   display: grid;
@@ -184,6 +211,91 @@ body::selection {
   border: 2px solid #020814;
   background: #ffd660;
   box-shadow: 0 0 0 5px rgba(255, 214, 96, 0.18);
+}
+
+.org-chart {
+  position: relative;
+  display: grid;
+  gap: 1.4rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(135deg, rgba(255, 214, 96, 0.1), transparent 32%),
+    rgba(255, 255, 255, 0.05);
+  padding: 1.25rem;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.22);
+}
+
+@media (min-width: 640px) {
+  .org-chart {
+    padding: 1.75rem;
+  }
+}
+
+.org-row {
+  position: relative;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.org-row + .org-row {
+  padding-top: 1.1rem;
+}
+
+.org-row + .org-row::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 1.1rem;
+  width: 1px;
+  background: rgba(255, 214, 96, 0.36);
+}
+
+.org-level {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.org-groups {
+  display: grid;
+  gap: 0.85rem;
+}
+
+@media (min-width: 700px) {
+  .org-groups {
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  }
+}
+
+.org-node {
+  border-radius: 0.85rem;
+  border: 1px solid rgba(255, 214, 96, 0.2);
+  background: rgba(4, 18, 47, 0.74);
+  padding: 1rem;
+  text-align: center;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 14px 36px rgba(0, 0, 0, 0.2);
+}
+
+.org-node h4 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  color: #ffd660;
+}
+
+.org-node p {
+  margin-top: 0.45rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .news-card,
