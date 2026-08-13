@@ -3,7 +3,7 @@ import ContactForm from "./ContactForm";
 
 const linktreeUrl =
   "https://linktr.ee/uciaerodesign?utm_source=linktree_profile_share&ltsid=6b182c60-f657-419e-b3a5-d9c96b646fc1";
-const zotFunderUrl = "https://zotfunder.give.uci.edu/project/47653";
+const zotFunderUrl = "https://zotfunder.give.uci.edu/project/48494";
 const instagramUrl = "https://www.instagram.com/aerodesignuci/";
 const linkedInUrl = "https://www.linkedin.com/company/aerodesignuci/posts/?feedView=all";
 const aniLimGmailUrl =
@@ -231,11 +231,11 @@ export default function Home() {
     },
     {
       label: "ZotFunder",
-      title: "UC Irvine Design/Build/Fly 2025-26",
+      title: "Aero Design ZotFunder",
       description:
-        "The most recent ZotFunder campaign has ended and is inactive right now. A new giving link can be added when the next campaign goes live.",
+        "Support the team through the official ZotFunder link shared by Aero Design.",
       href: zotFunderUrl,
-      action: "View Past Campaign",
+      action: "Open ZotFunder",
     },
     {
       label: "Email",
@@ -652,7 +652,6 @@ export default function Home() {
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a href="#contact" className="inline-flex-button">Partner With Us</a>
-              <a href={aniLimGmailUrl} target="_blank" rel="noopener noreferrer" className="inline-flex-secondary">Email Ani Lim</a>
             </div>
           </div>
         </div>
