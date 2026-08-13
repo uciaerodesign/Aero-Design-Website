@@ -12,6 +12,7 @@ const aniLimGmailUrl =
 export default function Home() {
   const navigationItems = [
     { label: "Home", href: "#home" },
+    { label: "Subteam Overview", href: "#subteams" },
     { label: "The Team", href: "#team" },
     { label: "Our Journey", href: "#journey" },
     { label: "News", href: "#news" },
@@ -65,6 +66,34 @@ export default function Home() {
       name: "Sophia Vieira",
       title: "Structures Co-Lead",
       image: "/media/team-leaders/sophia-vieira.jpg",
+    },
+  ];
+
+  const subteamOverviews = [
+    {
+      name: "Aerodynamics",
+      overview:
+        "The aerodynamics subteam handles the primary conceptual aircraft design for Aero Design. Using OpenVSP and MATLAB, we create initial designs and calculate performance across different aircraft configurations while ensuring compliance with competition rules. We then refine these designs with the help of STAR-CCM+ and XFLR5 to optimize performance before handing them off to the Structures and Manufacturing subteams. From there, the subteam helps build the aircraft and contributes to the competition design report.",
+    },
+    {
+      name: "Propulsion & Avionics",
+      overview:
+        "P&A subteam is responsible for designing, integrating, and testing the aircraft's propulsion and electronic systems. Our team conducts research and development in areas including motor and propeller optimization, theoretical and practical thrust testing, radio and servo integration and setup, and overall system reliability. Through analysis of the aircraft's performance and iterative design, Propulsion & Avionics subteam ensures the aircraft performs safely, efficiently, and reliably throughout flight testing and competition.",
+    },
+    {
+      name: "Manufacturing",
+      overview:
+        "The manufacturing subteam is responsible for turning the aircraft design into a competition-ready plane. We ensure high standards throughout the build process by designing and fabricating assembly jigs and fixtures, creating and applying GD&T principles to produce accurate, repeatable components. The team also develops and executes testing procedures, research and development to improve manufacturing methods, and works closely with other subteams to ensure the final aircraft is built efficiently and to specification.",
+    },
+    {
+      name: "Structures",
+      overview:
+        "The structures wing and tail subteam is responsible for realizing the internal members of our aircraft for given challenge constraints and aerodynamic specifications. This includes designing rib configurations for a given airfoil, making truss, spar, and stringer designs, and integrating propulsion and controls. Structures members are also responsible for verifying the structural integrity of their design using FEA. Additionally, once the design is completed, structures also assists with manufacturing and can provide guidance for their designs.",
+    },
+    {
+      name: "Operations",
+      overview:
+        "The operations subteam deals with all aspects of marketing, business, and project management. We handle the logistics for all team branding, recruitment, and industry outreach while maintaining the financial and logistical backbone of our project. The subteam ensures that we are all seen as a team and makes sure we have the funds to take off.",
     },
   ];
 
@@ -352,6 +381,30 @@ export default function Home() {
               efficiency, flight testing, manufacturing, and the hands-on systems
               work that turns a student concept into a competition aircraft.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell" id="subteams">
+        <div className="mx-auto max-w-6xl">
+          <p className="section-kicker">SUBTEAM OVERVIEW</p>
+          <div className="mt-4 max-w-3xl">
+            <h2 className="section-title">How Each Subteam Supports The Aircraft</h2>
+            <p className="body-copy">
+              Aero Design is built through focused subteams that carry the aircraft
+              from early design through manufacturing, testing, competition, and
+              outreach.
+            </p>
+          </div>
+
+          <div className="subteam-grid mt-10">
+            {subteamOverviews.map((subteam) => (
+              <article className="subteam-card" key={subteam.name}>
+                <p className="card-kicker">Subteam</p>
+                <h3>{subteam.name}</h3>
+                <p>{subteam.overview}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>

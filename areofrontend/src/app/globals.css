@@ -317,6 +317,51 @@ body::selection {
   margin-top: 0.55rem;
 }
 
+.subteam-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .subteam-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.subteam-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(145deg, rgba(255, 214, 96, 0.08), transparent 42%),
+    rgba(255, 255, 255, 0.05);
+  padding: 1.25rem;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.22);
+}
+
+@media (min-width: 640px) {
+  .subteam-card {
+    padding: 1.6rem;
+  }
+}
+
+.subteam-card h3 {
+  margin-top: 0.8rem;
+  font-size: 1.3rem;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.subteam-card p:last-child {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.75rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .news-card,
 .sponsor-card,
 .link-card,
