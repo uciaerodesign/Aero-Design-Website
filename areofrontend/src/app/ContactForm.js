@@ -6,23 +6,43 @@ export default function ContactForm() {
   const [name, setName] = useState("");
   const [replyEmail, setReplyEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("idle");
+  const [statusMessage, setStatusMessage] = useState("");
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
+    setStatus("sending");
+    setStatusMessage("");
 
-    const subject = `Aero Design Inquiry from ${name}`;
-    const body = [
-      `Name: ${name}`,
-      `Reply Email: ${replyEmail}`,
-      "",
-      message,
-    ].join("\n");
-    const params = [
-      `subject=${encodeURIComponent(subject)}`,
-      `body=${encodeURIComponent(body)}`,
-    ].join("&");
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", replyEmail);
+    formData.append("message", message);
+    formData.append(
+      "botcheck",
+      event.currentTarget.elements.namedItem("botcheck")?.value || ""
+    );
 
-    window.location.href = `mailto:uciaerodesign@gmail.com?${params}`;
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok) {
+        throw new Error(result?.message || "Message could not be sent.");
+      }
+
+      setName("");
+      setReplyEmail("");
+      setMessage("");
+      setStatus("success");
+      setStatusMessage("Message sent to Aero Design.");
+    } catch (error) {
+      setStatus("error");
+      setStatusMessage(error.message || "Message could not be sent.");
+    }
   }
 
   return (
@@ -31,6 +51,12 @@ export default function ContactForm() {
       className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-5 shadow-[0_22px_70px_rgba(0,0,0,0.22)] sm:p-7"
     >
       <p className="card-kicker">Contact Form</p>
+      <input
+        className="hidden"
+        name="botcheck"
+        tabIndex="-1"
+        autoComplete="off"
+      />
       <div className="mt-5 grid gap-4 md:grid-cols-2">
         <label className="form-label">
           <span>Name</span>
@@ -65,9 +91,23 @@ export default function ContactForm() {
           required
         />
       </label>
-      <button type="submit" className="inline-flex-button mt-5">
-        Compose Email
+      <button
+        type="submit"
+        className="inline-flex-button mt-5"
+        disabled={status === "sending"}
+      >
+        {status === "sending" ? "Sending..." : "Send Message"}
       </button>
+      {statusMessage ? (
+        <p
+          className={`mt-4 text-sm ${
+            status === "success" ? "text-emerald-300" : "text-red-300"
+          }`}
+          role="status"
+        >
+          {statusMessage}
+        </p>
+      ) : null}
     </form>
   );
 }
