@@ -231,63 +231,63 @@ export default function Home() {
 
   const sponsorGroups = [
     {
-      season: "2026-2027 Sponsorship",
-      summary: "Accepted sponsors for the current aircraft cycle.",
-      sponsors: [
-        {
-          name: "Polymaker",
-          type: "Accepted Sponsor",
-          note: "Supporting the current aircraft cycle with additive manufacturing materials.",
-          logo: "/media/sponsors/polymaker.png",
-          href: "https://polymaker.com/",
-        },
-        {
-          name: "SendCutSend",
-          type: "Accepted Sponsor",
-          note: "Supporting rapid custom manufacturing and fabrication for team hardware.",
-          logo: "/media/sponsors/sendcutsend.svg",
-          href: "https://sendcutsend.com/",
-        },
-        {
-          name: "Liquid I.V.",
-          type: "Accepted Sponsor",
-          note: "Supporting the team with hydration resources for build days, testing, and competition prep.",
-          logo: "/media/sponsors/liquid-iv.svg",
-          href: "https://www.liquid-iv.com/",
-        },
-      ],
-    },
-    {
       season: "2025-2026 Sponsorship",
       summary: "Accepted sponsors from the previous aircraft cycle.",
       sponsors: [
         {
           name: "Salient Motion",
-          type: "Accepted Sponsor",
+          type: "Aerospace Manufacturing",
           note: "Supported Aero Design through the 2025-2026 sponsorship cycle.",
           logo: "/media/sponsors/salient-motion.svg",
           href: "https://salientmotion.com/",
         },
         {
           name: "Protocase",
-          type: "Accepted Sponsor",
+          type: "Custom Manufacturing",
           note: "Provided sponsorship support for manufacturing and 3D printing resources.",
           logo: "/media/sponsors/protocase.png",
           href: "https://www.protocase.com/",
         },
         {
           name: "GoEngineer",
-          type: "Accepted Sponsor",
+          type: "Engineering Software",
           note: "Provided monetary support for Aero Design's 2025-2026 build season.",
           logo: "/media/sponsors/goengineer.webp",
           href: "https://www.goengineer.com/",
         },
         {
           name: "Polymaker",
-          type: "Accepted Sponsor",
+          type: "Additive Manufacturing",
           note: "Provided filament support for aircraft prototyping and manufacturing.",
           logo: "/media/sponsors/polymaker.png",
           href: "https://polymaker.com/",
+        },
+      ],
+    },
+    {
+      season: "2026-2027 Sponsorship",
+      summary: "Accepted sponsors for the current aircraft cycle. More are coming up for 2026-2027.",
+      sponsors: [
+        {
+          name: "Polymaker",
+          type: "Additive Manufacturing",
+          note: "Supporting the current aircraft cycle with additive manufacturing materials.",
+          logo: "/media/sponsors/polymaker.png",
+          href: "https://polymaker.com/",
+        },
+        {
+          name: "SendCutSend",
+          type: "Custom Manufacturing",
+          note: "Supporting rapid custom manufacturing and fabrication for team hardware.",
+          logo: "/media/sponsors/sendcutsend.svg",
+          href: "https://sendcutsend.com/",
+        },
+        {
+          name: "Liquid I.V.",
+          type: "Hydration Partner",
+          note: "Supporting the team with hydration resources for build days, testing, and competition prep.",
+          logo: "/media/sponsors/liquid-iv.svg",
+          href: "https://www.liquid-iv.com/",
         },
       ],
     },
@@ -708,9 +708,10 @@ export default function Home() {
           <div className="mt-10 grid gap-10">
             {sponsorGroups.map((group) => (
               <div className="sponsor-season" key={group.season}>
+                <div className="sponsor-roadmap-dot" aria-hidden="true" />
                 <div className="sponsor-season-heading">
                   <div>
-                    <p className="card-kicker">Accepted Sponsors</p>
+                    <p className="card-kicker">Roadmap</p>
                     <h3>{group.season}</h3>
                   </div>
                   <p>{group.summary}</p>
