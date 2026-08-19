@@ -389,7 +389,31 @@ body::selection {
   }
 }
 
+.sponsor-card {
+  display: flex;
+  min-height: 20rem;
+  flex-direction: column;
+}
+
+.sponsor-logo-wrap {
+  display: flex;
+  min-height: 8rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #ffffff;
+  padding: 1.4rem;
+}
+
+.sponsor-logo {
+  max-height: 4.5rem;
+  width: 100%;
+  object-fit: contain;
+}
+
 .news-card:hover,
+.sponsor-card:hover,
 .link-card:hover,
 .leader-card:hover {
   transform: translateY(-0.25rem);

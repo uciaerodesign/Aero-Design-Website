@@ -231,14 +231,25 @@ export default function Home() {
 
   const sponsors = [
     {
-      name: "HAAS",
-      type: "Monetary Sponsor",
-      note: "Supported the 2025-2026 aircraft cycle through direct sponsorship.",
+      name: "Polymaker",
+      type: "Accepted Sponsor",
+      note: "Supporting the 2026-2027 aircraft cycle with additive manufacturing materials.",
+      logo: "/media/sponsors/polymaker.png",
+      href: "https://polymaker.com/",
     },
     {
-      name: "GoEngineer",
-      type: "Monetary Sponsor",
-      note: "Helped fund materials, competition preparation, and team resources.",
+      name: "SendCutSend",
+      type: "Accepted Sponsor",
+      note: "Supporting rapid custom manufacturing and fabrication for team hardware.",
+      logo: "/media/sponsors/sendcutsend.svg",
+      href: "https://sendcutsend.com/",
+    },
+    {
+      name: "Liquid I.V.",
+      type: "Accepted Sponsor",
+      note: "Supporting the team with hydration resources for build days, testing, and competition prep.",
+      logo: "/media/sponsors/liquid-iv.svg",
+      href: "https://www.liquid-iv.com/",
     },
   ];
 
@@ -646,23 +657,32 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <p className="section-kicker">SPONSORS</p>
           <div className="mt-4 max-w-3xl">
-            <h2 className="section-title">Trusted By Partners Who Keep Us Flying</h2>
+            <h2 className="section-title">2026-2027 Sponsorship</h2>
             <p className="body-copy">
-              Current sponsor information is ready to expand with logo artwork and
-              plane decal photos when the Drive assets and sponsorship spreadsheet
-              are added to the workspace.
+              These accepted sponsors help Aero Design turn student-built aircraft
+              concepts into flight-ready competition hardware.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
             {sponsors.map((sponsor) => (
-              <article key={sponsor.name} className="sponsor-card">
-                <div className="flex h-24 items-center justify-center rounded-lg border border-white/10 bg-white text-[#07101f]">
-                  <p className="text-3xl font-black uppercase tracking-[0.08em]">{sponsor.name}</p>
+              <a key={sponsor.name} href={sponsor.href} target="_blank" rel="noopener noreferrer" className="sponsor-card group">
+                <div className="sponsor-logo-wrap">
+                  <Image
+                    src={sponsor.logo}
+                    alt={`${sponsor.name} logo`}
+                    width={320}
+                    height={120}
+                    className="sponsor-logo"
+                    unoptimized
+                  />
                 </div>
                 <p className="card-kicker mt-6">{sponsor.type}</p>
+                <h3 className="mt-3 text-xl font-semibold tracking-[0.04em] text-white">
+                  {sponsor.name}
+                </h3>
                 <p className="mt-3 text-sm leading-7 text-white/72">{sponsor.note}</p>
-              </article>
+              </a>
             ))}
           </div>
         </div>
