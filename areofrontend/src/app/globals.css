@@ -391,7 +391,7 @@ body::selection {
 
 .sponsor-card {
   display: flex;
-  min-height: 20rem;
+  min-height: 15.5rem;
   flex-direction: column;
 }
 
@@ -488,7 +488,9 @@ body::selection {
 
 .sponsor-logo {
   max-height: 4.5rem;
-  width: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
 }
 

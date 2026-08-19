@@ -237,28 +237,24 @@ export default function Home() {
         {
           name: "Salient Motion",
           type: "Aerospace Manufacturing",
-          note: "Supported Aero Design through the 2025-2026 sponsorship cycle.",
           logo: "/media/sponsors/salient-motion.svg",
           href: "https://salientmotion.com/",
         },
         {
           name: "Protocase",
           type: "Custom Manufacturing",
-          note: "Provided sponsorship support for manufacturing and 3D printing resources.",
           logo: "/media/sponsors/protocase.png",
           href: "https://www.protocase.com/",
         },
         {
           name: "GoEngineer",
           type: "Engineering Software",
-          note: "Provided monetary support for Aero Design's 2025-2026 build season.",
           logo: "/media/sponsors/goengineer.webp",
           href: "https://www.goengineer.com/",
         },
         {
           name: "Polymaker",
           type: "Additive Manufacturing",
-          note: "Provided filament support for aircraft prototyping and manufacturing.",
           logo: "/media/sponsors/polymaker.png",
           href: "https://polymaker.com/",
         },
@@ -271,21 +267,18 @@ export default function Home() {
         {
           name: "Polymaker",
           type: "Additive Manufacturing",
-          note: "Supporting the current aircraft cycle with additive manufacturing materials.",
           logo: "/media/sponsors/polymaker.png",
           href: "https://polymaker.com/",
         },
         {
           name: "SendCutSend",
           type: "Custom Manufacturing",
-          note: "Supporting rapid custom manufacturing and fabrication for team hardware.",
           logo: "/media/sponsors/sendcutsend.svg",
           href: "https://sendcutsend.com/",
         },
         {
           name: "Liquid I.V.",
           type: "Hydration Partner",
-          note: "Supporting the team with hydration resources for build days, testing, and competition prep.",
           logo: "/media/sponsors/liquid-iv.svg",
           href: "https://www.liquid-iv.com/",
         },
@@ -734,7 +727,6 @@ export default function Home() {
                       <h4 className="mt-3 text-xl font-semibold tracking-[0.04em] text-white">
                         {sponsor.name}
                       </h4>
-                      <p className="mt-3 text-sm leading-7 text-white/72">{sponsor.note}</p>
                     </a>
                   ))}
                 </div>
