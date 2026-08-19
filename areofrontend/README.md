@@ -18,7 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-The contact form sends messages through Web3Forms. Set `WEB3FORMS_ACCESS_KEY` in `.env.local` and in Vercel project environment variables before using it in production.
+The contact form sends messages through Web3Forms using the public form access key in `src/app/ContactForm.js`.
 
 ## Learn More
 

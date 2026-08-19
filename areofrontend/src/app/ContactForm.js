@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+const WEB3FORMS_ACCESS_KEY = "69083afa-d266-449a-92fb-23932728a676";
+
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [replyEmail, setReplyEmail] = useState("");
@@ -15,8 +18,12 @@ export default function ContactForm() {
     setStatusMessage("");
 
     const formData = new FormData();
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
     formData.append("name", name);
     formData.append("email", replyEmail);
+    formData.append("replyto", replyEmail);
+    formData.append("subject", `Aero Design Inquiry from ${name}`);
+    formData.append("from_name", "Aero Design Website");
     formData.append("message", message);
     formData.append(
       "botcheck",
@@ -24,7 +31,7 @@ export default function ContactForm() {
     );
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
         body: formData,
       });
