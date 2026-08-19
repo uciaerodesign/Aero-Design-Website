@@ -229,27 +229,67 @@ export default function Home() {
     },
   ];
 
-  const sponsors = [
+  const sponsorGroups = [
     {
-      name: "Polymaker",
-      type: "Accepted Sponsor",
-      note: "Supporting the 2026-2027 aircraft cycle with additive manufacturing materials.",
-      logo: "/media/sponsors/polymaker.png",
-      href: "https://polymaker.com/",
+      season: "2026-2027 Sponsorship",
+      summary: "Accepted sponsors for the current aircraft cycle.",
+      sponsors: [
+        {
+          name: "Polymaker",
+          type: "Accepted Sponsor",
+          note: "Supporting the current aircraft cycle with additive manufacturing materials.",
+          logo: "/media/sponsors/polymaker.png",
+          href: "https://polymaker.com/",
+        },
+        {
+          name: "SendCutSend",
+          type: "Accepted Sponsor",
+          note: "Supporting rapid custom manufacturing and fabrication for team hardware.",
+          logo: "/media/sponsors/sendcutsend.svg",
+          href: "https://sendcutsend.com/",
+        },
+        {
+          name: "Liquid I.V.",
+          type: "Accepted Sponsor",
+          note: "Supporting the team with hydration resources for build days, testing, and competition prep.",
+          logo: "/media/sponsors/liquid-iv.svg",
+          href: "https://www.liquid-iv.com/",
+        },
+      ],
     },
     {
-      name: "SendCutSend",
-      type: "Accepted Sponsor",
-      note: "Supporting rapid custom manufacturing and fabrication for team hardware.",
-      logo: "/media/sponsors/sendcutsend.svg",
-      href: "https://sendcutsend.com/",
-    },
-    {
-      name: "Liquid I.V.",
-      type: "Accepted Sponsor",
-      note: "Supporting the team with hydration resources for build days, testing, and competition prep.",
-      logo: "/media/sponsors/liquid-iv.svg",
-      href: "https://www.liquid-iv.com/",
+      season: "2025-2026 Sponsorship",
+      summary: "Accepted sponsors from the previous aircraft cycle.",
+      sponsors: [
+        {
+          name: "Salient Motion",
+          type: "Accepted Sponsor",
+          note: "Supported Aero Design through the 2025-2026 sponsorship cycle.",
+          logo: "/media/sponsors/salient-motion.svg",
+          href: "https://salientmotion.com/",
+        },
+        {
+          name: "Protocase",
+          type: "Accepted Sponsor",
+          note: "Provided sponsorship support for manufacturing and 3D printing resources.",
+          logo: "/media/sponsors/protocase.png",
+          href: "https://www.protocase.com/",
+        },
+        {
+          name: "GoEngineer",
+          type: "Accepted Sponsor",
+          note: "Provided monetary support for Aero Design's 2025-2026 build season.",
+          logo: "/media/sponsors/goengineer.webp",
+          href: "https://www.goengineer.com/",
+        },
+        {
+          name: "Polymaker",
+          type: "Accepted Sponsor",
+          note: "Provided filament support for aircraft prototyping and manufacturing.",
+          logo: "/media/sponsors/polymaker.png",
+          href: "https://polymaker.com/",
+        },
+      ],
     },
   ];
 
@@ -657,32 +697,47 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <p className="section-kicker">SPONSORS</p>
           <div className="mt-4 max-w-3xl">
-            <h2 className="section-title">2026-2027 Sponsorship</h2>
+            <h2 className="section-title">Partners Supporting Aero Design</h2>
             <p className="body-copy">
               These accepted sponsors help Aero Design turn student-built aircraft
-              concepts into flight-ready competition hardware.
+              concepts into flight-ready competition hardware across each build
+              season.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {sponsors.map((sponsor) => (
-              <a key={sponsor.name} href={sponsor.href} target="_blank" rel="noopener noreferrer" className="sponsor-card group">
-                <div className="sponsor-logo-wrap">
-                  <Image
-                    src={sponsor.logo}
-                    alt={`${sponsor.name} logo`}
-                    width={320}
-                    height={120}
-                    className="sponsor-logo"
-                    unoptimized
-                  />
+          <div className="mt-10 grid gap-10">
+            {sponsorGroups.map((group) => (
+              <div className="sponsor-season" key={group.season}>
+                <div className="sponsor-season-heading">
+                  <div>
+                    <p className="card-kicker">Accepted Sponsors</p>
+                    <h3>{group.season}</h3>
+                  </div>
+                  <p>{group.summary}</p>
                 </div>
-                <p className="card-kicker mt-6">{sponsor.type}</p>
-                <h3 className="mt-3 text-xl font-semibold tracking-[0.04em] text-white">
-                  {sponsor.name}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-white/72">{sponsor.note}</p>
-              </a>
+
+                <div className="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+                  {group.sponsors.map((sponsor) => (
+                    <a key={`${group.season}-${sponsor.name}`} href={sponsor.href} target="_blank" rel="noopener noreferrer" className="sponsor-card group">
+                      <div className="sponsor-logo-wrap">
+                        <Image
+                          src={sponsor.logo}
+                          alt={`${sponsor.name} logo`}
+                          width={320}
+                          height={120}
+                          className="sponsor-logo"
+                          unoptimized
+                        />
+                      </div>
+                      <p className="card-kicker mt-6">{sponsor.type}</p>
+                      <h4 className="mt-3 text-xl font-semibold tracking-[0.04em] text-white">
+                        {sponsor.name}
+                      </h4>
+                      <p className="mt-3 text-sm leading-7 text-white/72">{sponsor.note}</p>
+                    </a>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
