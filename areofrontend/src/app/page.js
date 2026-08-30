@@ -220,10 +220,10 @@ export default function Home() {
       summary:
         "The team returned from Fort Worth after competing in Regular class, bringing home a season defined by resilience, flight-line experience, and a stronger foundation for the next aircraft.",
       images: [
-        { src: "/api/news-photo-1a", alt: "Aero Design competition photo" },
-        { src: "/api/news-photo-1b", alt: "Aero Design aircraft photo" },
-        { src: "/api/news-photo-1c", alt: "Aero Design team photo" },
-        { src: "/api/news-photo-1d", alt: "Aero Design flight line photo" },
+        { src: "/media/news-photo-1a.jpeg", alt: "Aero Design competition photo" },
+        { src: "/media/news-photo-1b.jpeg", alt: "Aero Design aircraft photo" },
+        { src: "/media/news-photo-1c.jpeg", alt: "Aero Design team photo" },
+        { src: "/media/news-photo-1d.jpeg", alt: "Aero Design flight line photo" },
       ],
       href: "https://www.linkedin.com/company/aerodesignuci/posts/",
     },
@@ -328,9 +328,9 @@ export default function Home() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
         >
-          <source src="/api/hero-video" type="video/mp4" />
+          <source src="/media/hero-video.mp4" type="video/mp4" />
         </video>
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,214,98,0.22),transparent_34%),linear-gradient(180deg,rgba(1,7,18,0.28),rgba(1,7,18,0.86))]" />
@@ -341,12 +341,11 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-white/18 bg-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.24)] backdrop-blur-md sm:h-14 sm:w-14">
                 <Image
-                  src="/api/club-logo"
+                  src="/media/aerodesignuci_logo.jpeg"
                   alt="Aero Design logo"
                   width={56}
                   height={56}
                   className="h-full w-full object-cover"
-                  unoptimized
                 />
               </div>
               <div>
@@ -403,12 +402,11 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
           <MediaFrame>
             <Image
-              src="/api/team-photo"
+              src="/media/team-photo.JPG"
               alt="Aero Design team standing behind their aircraft"
               width={1158}
               height={772}
               className="h-full w-full object-cover"
-              unoptimized
             />
           </MediaFrame>
 
@@ -475,12 +473,11 @@ export default function Home() {
 
           <MediaFrame>
             <Image
-              src="/api/team-members-photo"
+              src="/media/team-members.jpeg"
               alt="Aero Design team members standing beside their aircraft"
               width={576}
               height={768}
               className="h-full w-full object-cover"
-              unoptimized
             />
           </MediaFrame>
         </div>
@@ -504,8 +501,8 @@ export default function Home() {
               <div className="org-row" key={row.level}>
                 <p className="org-level">{row.level}</p>
                 <div className="org-groups">
-                  {row.groups.map((group) => (
-                    <article className="org-node" key={group.title}>
+                  {row.groups.map((group, groupIndex) => (
+                    <article className="org-node" key={`${row.level}-${group.title}-${groupIndex}`}>
                       <h4>{group.title}</h4>
                       {group.names.map((name) => (
                         <p key={name}>{name}</p>
@@ -596,28 +593,26 @@ export default function Home() {
             <div className="grid gap-6">
               <MediaFrame>
                 <video className="aspect-[16/10] h-full w-full object-cover" controls playsInline preload="metadata">
-                  <source src="/api/project-1-video" type="video/mp4" />
+                  <source src="/media/project-1-video.mp4" type="video/mp4" />
                 </video>
               </MediaFrame>
               <div className="grid gap-6 sm:grid-cols-2">
                 <MediaFrame>
                   <Image
-                    src="/api/project-1-photo-a"
+                    src="/media/project-1-photo-a.jpeg"
                     alt="Aero Design aircraft testing"
                     width={1365}
                     height={768}
                     className="h-full w-full object-cover"
-                    unoptimized
                   />
                 </MediaFrame>
                 <MediaFrame>
                   <Image
-                    src="/api/project-1-photo-b"
+                    src="/media/project-1-photo-b.jpeg"
                     alt="Aero Design project presentation"
                     width={1160}
                     height={768}
                     className="h-full w-full object-cover"
-                    unoptimized
                   />
                 </MediaFrame>
               </div>
@@ -650,7 +645,6 @@ export default function Home() {
                           width={600}
                           height={600}
                           className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                          unoptimized
                         />
                       </div>
                     ))}
@@ -663,7 +657,6 @@ export default function Home() {
                       width={1158}
                       height={772}
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                      unoptimized
                     />
                   </div>
                 )}
@@ -720,7 +713,6 @@ export default function Home() {
                           width={320}
                           height={120}
                           className="sponsor-logo"
-                          unoptimized
                         />
                       </div>
                       <p className="card-kicker mt-6">{sponsor.type}</p>
@@ -740,12 +732,11 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <MediaFrame>
             <Image
-              src="/api/team-photo"
+              src="/media/team-photo.JPG"
               alt="Aero Design team and aircraft"
               width={1158}
               height={772}
               className="h-full w-full object-cover"
-              unoptimized
             />
           </MediaFrame>
 
