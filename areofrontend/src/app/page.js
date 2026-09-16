@@ -8,6 +8,7 @@ const instagramUrl = "https://www.instagram.com/aerodesignuci/";
 const linkedInUrl = "https://www.linkedin.com/company/aerodesignuci/posts/?feedView=all";
 const aniLimGmailUrl =
   "https://mail.google.com/mail/?view=cm&fs=1&to=anil@uci.edu";
+const SignupLink = "https://forms.gle/ucNq92tzTGHzaXD7A";
 
 export default function Home() {
   const navigationItems = [
@@ -118,10 +119,6 @@ export default function Home() {
           title: "Aerodynamics Chief Engineer",
           names: ["Jibin Jiju"],
         },
-        {
-          title: "Operations Lead",
-          names: ["Ani Lim"],
-        },
       ],
     },
     {
@@ -146,6 +143,10 @@ export default function Home() {
         {
           title: "Aerodynamics Lead",
           names: ["Caden Chang"],
+        },
+        {
+          title: "Operations Lead",
+          names: ["Ani Lim"],
         },
       ],
     },
@@ -316,10 +317,17 @@ export default function Home() {
       href: aniLimGmailUrl,
       action: "Email Ani Lim",
     },
+    {
+      label: "Sign up Link",
+      title: "Sign up Link",
+      description: "sign up for joining us!",
+      href: SignupLink,
+      action: "Sign up to join"
+    },
   ];
 
   return (
-    <main className="bg-[#020814] text-white" id="home">
+    <main className="bg-black text-white" id="home">
       <section className="relative min-h-screen overflow-hidden">
         <video
           className="absolute inset-0 h-full w-full object-cover"
@@ -333,11 +341,11 @@ export default function Home() {
           <source src="/media/hero-video.mp4" type="video/mp4" />
         </video>
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,214,98,0.22),transparent_34%),linear-gradient(180deg,rgba(1,7,18,0.28),rgba(1,7,18,0.86))]" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#020814] to-transparent" />
-
-        <header className="absolute left-0 top-0 z-20 w-full px-4 py-4 sm:px-10 sm:py-6">
-          <div className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/25 px-4 py-3 shadow-[0_18px_60px_rgba(0,0,0,0.24)] backdrop-blur-md lg:flex-row lg:items-center lg:justify-between lg:gap-5 lg:px-5 lg:py-4">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,214,98,0.26),transparent_34%),linear-gradient(180deg,rgba(1,7,18,0.15),rgba(1,7,18,0.75))]" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
+        {/* The nav bars */}
+        <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-white/15 bg-[linear-gradient(180deg,rgba(2,8,20,0.82),rgba(2,8,20,0.64))] shadow-[0_18px_60px_rgba(0,0,0,0.24)] backdrop-blur-2xl backdrop-saturate-150">
+          <div className="flex w-full flex-col gap-4 px-4 py-3 sm:px-10 sm:py-4 lg:flex-row lg:items-center lg:justify-between lg:gap-5">
             <div className="flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-white/18 bg-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.24)] backdrop-blur-md sm:h-14 sm:w-14">
                 <Image
@@ -376,21 +384,21 @@ export default function Home() {
             <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.24em] text-white/72 sm:mb-5 sm:text-sm sm:tracking-[0.36em]">
               University of California, Irvine
             </p>
-            <h1 className="max-w-4xl text-[2.4rem] font-semibold uppercase leading-[1.08] tracking-[0.08em] text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)] sm:text-7xl sm:tracking-[0.12em] md:text-8xl">
+            <h1 className="hero-title max-w-4xl text-[2.4rem] font-semibold uppercase leading-[1.08] tracking-[0.08em] text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)] sm:text-7xl sm:tracking-[0.12em] md:text-8xl">
               Aero Design
             </h1>
-            <p className="mt-5 max-w-2xl text-sm font-semibold uppercase tracking-[0.22em] text-[#ffd660] sm:mt-6 sm:text-lg sm:tracking-[0.28em]">
+            <p className="hero-subtitle mt-5 max-w-2xl text-sm font-semibold uppercase tracking-[0.22em] text-[white] sm:mt-6 sm:text-lg sm:tracking-[0.28em]">
               Zot From Above
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center justify-center gap-3 sm:mt-12">
-              <a href="#intro" className="crystal-button hero-button">
+            <div className="hero-actions mt-9 flex flex-wrap items-center justify-center gap-3 sm:mt-12">
+              <a href="#intro" className="crystal-button hero-button hero-action-button">
                 Explore
               </a>
-              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="hero-social-button hero-button">
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="hero-social-button hero-button hero-action-button">
                 Instagram
               </a>
-              <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className="hero-social-button hero-button">
+              <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className="hero-social-button hero-button hero-action-button">
                 LinkedIn
               </a>
             </div>

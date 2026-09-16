@@ -20,6 +20,7 @@
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
@@ -66,6 +67,123 @@ body::selection {
     box-shadow 180ms ease;
 }
 
+.hero-title,
+.hero-subtitle {
+  opacity: 0;
+  will-change: opacity, transform, filter;
+}
+
+.hero-title {
+  animation: hero-title-load-in 1500ms cubic-bezier(0.16, 1, 0.3, 1) 400ms both;
+}
+
+.hero-subtitle {
+  animation: hero-subtitle-load-in 1300ms cubic-bezier(0.16, 1, 0.3, 1) 1500ms both;
+}
+
+.hero-action-button {
+  opacity: 0;
+  animation: hero-actions-load-in 950ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: opacity, transform, filter;
+}
+
+.hero-action-button:nth-child(1) {
+  animation-delay: 2500ms;
+}
+
+.hero-action-button:nth-child(2) {
+  animation-delay: 2750ms;
+}
+
+.hero-action-button:nth-child(3) {
+  animation-delay: 3000ms;
+}
+
+@keyframes hero-title-load-in {
+  from {
+    opacity: 0;
+    filter: blur(22px);
+    transform: translateY(2.2rem) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-subtitle-load-in {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(1.1rem);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-actions-load-in {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title,
+  .hero-subtitle,
+  .hero-action-button {
+    animation-name: hero-reduced-fade-in;
+    filter: none;
+    transform: none;
+  }
+
+  .hero-title {
+    animation-duration: 900ms;
+    animation-delay: 200ms;
+  }
+
+  .hero-subtitle {
+    animation-duration: 800ms;
+    animation-delay: 900ms;
+  }
+
+  .hero-action-button {
+    animation-duration: 700ms;
+    animation-delay: 1500ms;
+  }
+
+  .hero-action-button:nth-child(2) {
+    animation-delay: 1650ms;
+  }
+
+  .hero-action-button:nth-child(3) {
+    animation-delay: 1800ms;
+  }
+}
+
+@keyframes hero-reduced-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @media (min-width: 640px) {
   .hero-button {
     min-width: 13.25rem;
@@ -79,6 +197,7 @@ body::selection {
   z-index: 10;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #000000;
   padding: 3.5rem 1rem;
 }
 
@@ -235,9 +354,7 @@ body::selection {
   overflow: hidden;
   border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background:
-    linear-gradient(135deg, rgba(255, 214, 96, 0.1), transparent 32%),
-    rgba(255, 255, 255, 0.05);
+  background: #000000;
   padding: 1.25rem;
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.22);
 }
@@ -290,7 +407,8 @@ body::selection {
 .org-node {
   border-radius: 0.85rem;
   border: 1px solid rgba(255, 214, 96, 0.2);
-  background: rgba(4, 18, 47, 0.74);
+  background-color: #000000;
+  background-image: none;
   padding: 0.9rem;
   text-align: center;
   box-shadow:
@@ -308,9 +426,10 @@ body::selection {
 
 .org-node p {
   margin-top: 0.34rem;
-  font-size: 0.8rem;
+  font-size: 0.92rem;
+  font-weight: 600;
   line-height: 1.32;
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .org-node p:first-of-type {

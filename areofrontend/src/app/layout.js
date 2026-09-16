@@ -1,12 +1,12 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Aero Design",
-  description: "Official website for Aero Design",
+  title: "UCI Aero Design",
+  description: "Official website for UCI Aero Design",
   icons: {
     icon: "/icon.png?v=3",
     shortcut: "/icon.png?v=3",
-    apple: "/apple-icon.png?v=3",
+    apple: "/icon.png?v=3",
   },
 };
 
