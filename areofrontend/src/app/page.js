@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ContactForm from "./ContactForm";
+import MobileNav from "./MobileNav";
 
 const linktreeUrl =
   "https://linktr.ee/uciaerodesign?utm_source=linktree_profile_share&ltsid=6b182c60-f657-419e-b3a5-d9c96b646fc1";
@@ -324,6 +325,13 @@ export default function Home() {
       href: SignupLink,
       action: "Sign up to join"
     },
+    {
+      label: "Website Feedback",
+      title: "Zhiyuan Rong",
+      description: "For feedback about the Aero Design website, email zhiyuar2@uci.edu.",
+      href: "mailto:zhiyuar2@uci.edu",
+      action: "Email Website Feedback",
+    },
   ];
 
   return (
@@ -345,7 +353,7 @@ export default function Home() {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
         {/* The nav bars */}
         <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-white/15 bg-[linear-gradient(180deg,rgba(2,8,20,0.82),rgba(2,8,20,0.64))] shadow-[0_18px_60px_rgba(0,0,0,0.24)] backdrop-blur-2xl backdrop-saturate-150">
-          <div className="flex w-full flex-col gap-4 px-4 py-3 sm:px-10 sm:py-4 lg:flex-row lg:items-center lg:justify-between lg:gap-5">
+          <div className="flex w-full flex-col gap-3 px-4 py-2 pb-3 sm:px-10 sm:pt-5 md:flex-row md:items-center md:justify-between md:gap-5">
             <div className="flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-white/18 bg-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.24)] backdrop-blur-md sm:h-14 sm:w-14">
                 <Image
@@ -364,9 +372,10 @@ export default function Home() {
                   Aero Design
                 </p>
               </div>
+              <MobileNav items={navigationItems} />
             </div>
-            <nav aria-label="Primary">
-              <ul className="flex flex-wrap gap-x-6 gap-y-2 text-[11px] font-medium uppercase tracking-[0.14em] text-white/78 sm:justify-end sm:gap-x-8 sm:text-xs">
+            <nav aria-label="Primary" className="hidden md:block">
+              <ul className="flex flex-wrap justify-end gap-x-8 gap-y-1 text-[13px] font-small uppercase tracking-[0.14em] text-white/78">
                 {navigationItems.map((item) => (
                   <li key={item.label}>
                     <a href={item.href} className="inline-flex py-1 transition hover:text-white">
@@ -381,7 +390,7 @@ export default function Home() {
 
         <div className="relative z-10 flex min-h-screen items-center justify-center px-4 pt-28 sm:px-6 sm:pt-0">
           <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
-            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.24em] text-white/72 sm:mb-5 sm:text-sm sm:tracking-[0.36em]">
+            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.24em] text-white/72 sm:mb-5 sm:text-[20px] sm:tracking-[0.36em]">
               University of California, Irvine
             </p>
             <h1 className="hero-title max-w-4xl text-[2.4rem] font-semibold uppercase leading-[1.08] tracking-[0.08em] text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)] sm:text-7xl sm:tracking-[0.12em] md:text-8xl">
@@ -588,12 +597,6 @@ export default function Home() {
                     {item.status}
                   </p>
                   <p className="mt-4 text-sm leading-7 text-white/72">{item.copy}</p>
-                  {index === 0 ? (
-                    <p className="mt-4 text-sm leading-7 text-white/72">
-                      New 2026 competition photos can be swapped in here when the
-                      Drive assets are added to the project.
-                    </p>
-                  ) : null}
                 </article>
               ))}
             </div>
@@ -620,6 +623,26 @@ export default function Home() {
                     alt="Aero Design project presentation"
                     width={1160}
                     height={768}
+                    className="h-full w-full object-cover"
+                  />
+                </MediaFrame>
+              </div>
+              <div className="grid gap-6 sm:grid-cols-2">
+                <MediaFrame>
+                  <Image
+                    src="/media/journey-plane-build.jpeg"
+                    alt="Aero Design members building the Zot Force One aircraft frame"
+                    width={1800}
+                    height={1201}
+                    className="h-full w-full object-cover"
+                  />
+                </MediaFrame>
+                <MediaFrame>
+                  <Image
+                    src="/media/journey-plane-build-2.jpeg"
+                    alt="Aero Design members working on the Zot Force One aircraft frame"
+                    width={1800}
+                    height={1201}
                     className="h-full w-full object-cover"
                   />
                 </MediaFrame>
