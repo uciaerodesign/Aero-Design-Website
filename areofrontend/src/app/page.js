@@ -60,6 +60,12 @@ export default function Home() {
       image: "/media/team-leaders/sean-pelletier.jpg",
     },
     {
+      name:"Alexey Elaev",
+      title: "Propulsion & Avionics Co-Lead",
+      image: "/media/team-leaders/alexey-elaev.png",
+    }
+    ,
+    {
       name: "Zachary Vogelsang",
       title: "Structures Co-Lead",
       image: "/media/team-leaders/zachary-vogelsang.jpg",
@@ -155,16 +161,16 @@ export default function Home() {
       level: "Engineering & Operations Teams",
       groups: [
         {
-          title: "Structures Engineers",
-          names: ["Abdullah Franklin", "Kairecse Monroy", "Ricardo Vera", "Ethan Lee"],
+          title: "Structures F Engineers",
+          names: ["Athaliah Franklin", "Kaireese Monroy", "Ricardo Vera", "Ethan Lee"],
         },
         {
-          title: "Structures Engineers",
+          title: "Structures W&T Engineers",
           names: ["Preston Hariadi", "Elina Nazhadi", "Samantha Esparza", "Abhinaav Balaji"],
         },
         {
           title: "Manufacturing Engineers",
-          names: ["Smaran Mishra", "Mina Salib", "Katie Lien", "Recva Patel", "Shishir Subramanya"],
+          names: ["Smaran Mishra", "Mina Salib", "Katie Lien", "Shishir Subramanya"],
         },
         {
           title: "P&A Engineers",
@@ -233,6 +239,30 @@ export default function Home() {
 
   const sponsorGroups = [
     {
+      season: "2026-2027 Sponsorship",
+      summary: "Accepted sponsors for the current aircraft cycle. More are coming up for 2026-2027.",
+      sponsors: [
+        {
+          name: "Polymaker",
+          type: "Additive Manufacturing",
+          logo: "/media/sponsors/polymaker.png",
+          href: "https://polymaker.com/",
+        },
+        {
+          name: "SendCutSend",
+          type: "Custom Manufacturing",
+          logo: "/media/sponsors/sendcutsend.svg",
+          href: "https://sendcutsend.com/",
+        },
+        {
+          name: "Liquid I.V.",
+          type: "Hydration Partner",
+          logo: "/media/sponsors/liquid-iv.svg",
+          href: "https://www.liquid-iv.com/",
+        },
+      ],
+    },
+    {
       season: "2025-2026 Sponsorship",
       summary: "Accepted sponsors from the previous aircraft cycle.",
       sponsors: [
@@ -259,30 +289,6 @@ export default function Home() {
           type: "Additive Manufacturing",
           logo: "/media/sponsors/polymaker.png",
           href: "https://polymaker.com/",
-        },
-      ],
-    },
-    {
-      season: "2026-2027 Sponsorship",
-      summary: "Accepted sponsors for the current aircraft cycle. More are coming up for 2026-2027.",
-      sponsors: [
-        {
-          name: "Polymaker",
-          type: "Additive Manufacturing",
-          logo: "/media/sponsors/polymaker.png",
-          href: "https://polymaker.com/",
-        },
-        {
-          name: "SendCutSend",
-          type: "Custom Manufacturing",
-          logo: "/media/sponsors/sendcutsend.svg",
-          href: "https://sendcutsend.com/",
-        },
-        {
-          name: "Liquid I.V.",
-          type: "Hydration Partner",
-          logo: "/media/sponsors/liquid-iv.svg",
-          href: "https://www.liquid-iv.com/",
         },
       ],
     },
@@ -313,24 +319,24 @@ export default function Home() {
     },
     {
       label: "Direct Inquiries",
-      title: "anil@uci.edu",
+      title: "Ani Lim",
       description: "For direct Aero Design inquiries, contact Ani Lim.",
       href: aniLimGmailUrl,
       action: "Email Ani Lim",
     },
     {
       label: "Sign up Link",
-      title: "Sign up Link",
-      description: "sign up for joining us!",
+      title: "News sign up Link",
+      description: "sign up for the latest updates of the team",
       href: SignupLink,
       action: "Sign up to join"
     },
     {
-      label: "Website Feedback",
+      label: "Feedback",
       title: "Zhiyuan Rong",
-      description: "For feedback about the Aero Design website, email zhiyuar2@uci.edu.",
+      description: "For feedback about the Aero Design website, email Zhiyuan Rong",
       href: "mailto:zhiyuar2@uci.edu",
-      action: "Email Website Feedback",
+      action: "Email Zhiyuan Rong",
     },
   ];
 
