@@ -1,0 +1,6 @@
+{
+  "framework": "nextjs",
+  "installCommand": "cd areofrontend && npm install",
+  "buildCommand": "cd areofrontend && npm run build",
+  "outputDirectory": "areofrontend/.next"
+}
