@@ -60,11 +60,10 @@ export default function Home() {
       image: "/media/team-leaders/sean-pelletier.jpg",
     },
     {
-      name:"Alexey Elaev",
+      name: "Alexey Elaev",
       title: "Propulsion & Avionics Co-Lead",
       image: "/media/team-leaders/alexey-elaev.png",
-    }
-    ,
+    },
     {
       name: "Zachary Vogelsang",
       title: "Structures Co-Lead",
@@ -145,7 +144,7 @@ export default function Home() {
         },
         {
           title: "Propulsion & Avionics Leads",
-          names: ["Sean Pelletier", "Alexey Eleev"],
+          names: ["Sean Pelletier", "Alexey Elaev"],
         },
         {
           title: "Aerodynamics Lead",
@@ -229,8 +228,6 @@ export default function Home() {
         "The team returned from Fort Worth after competing in Regular class, bringing home a season defined by resilience, flight-line experience, and a stronger foundation for the next aircraft.",
       images: [
         { src: "/media/news-photo-1a.jpeg", alt: "Aero Design competition photo" },
-        { src: "/media/news-photo-1b.jpeg", alt: "Aero Design aircraft photo" },
-        { src: "/media/news-photo-1c.jpeg", alt: "Aero Design team photo" },
         { src: "/media/news-photo-1d.jpeg", alt: "Aero Design flight line photo" },
       ],
       href: "https://www.linkedin.com/company/aerodesignuci/posts/",
