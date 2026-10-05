@@ -95,7 +95,7 @@ export default function Home() {
     {
       name: "Structures",
       overview:
-        "The structures wing and tail subteam is responsible for realizing the internal members of our aircraft for given challenge constraints and aerodynamic specifications. This includes designing rib configurations for a given airfoil, making truss, spar, and stringer designs, and integrating propulsion and controls. Structures members are also responsible for verifying the structural integrity of their design using FEA. Additionally, once the design is completed, structures also assists with manufacturing and can provide guidance for their designs.",
+        "The structures (fuselage) sub-team is responsible for our aircraft's main body, cargo bay, electronics bay, steering system, and landing gear: adhering to annual competition specs, aerodynamic constraints, and DFM/DFA principles. We optimize and validate our design's structural integrity under both flight and ground loads using FEA and classical stress analysis before handing off our technical drawings to manufacturing.",
     },
     {
       name: "Operations",
@@ -111,6 +111,14 @@ export default function Home() {
         {
           title: "Project Manager",
           names: ["Andrew Zhang"],
+        },
+        {
+          title: "Advisor",
+          names: ["Professor Larue"],
+        },
+        {
+          title: "Technical Advisor",
+          names: ["Colin Sledge"],
         },
       ],
     },
