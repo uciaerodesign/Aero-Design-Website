@@ -1,13 +1,10 @@
-import { siteUrl } from "./site";
+import { siteSections, siteUrl } from "./site";
 
 export default function sitemap() {
-  return [
-    {
-      url: siteUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-  ];
+  return siteSections.map((section) => ({
+    url: `${siteUrl}${section.path}`,
+    lastModified: new Date(),
+    changeFrequency: section.changeFrequency,
+    priority: section.priority,
+  }));
 }
-
