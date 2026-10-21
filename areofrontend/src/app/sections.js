@@ -167,7 +167,7 @@ export function TeamSection() {
           <summary>
             <div>
               <p className="card-kicker">Organization Chart</p>
-              <h3>Archive Team Structure</h3>
+              <h3>Team Structure</h3>
             </div>
             <span className="org-archive-action">
               View 2026-2027 structure
