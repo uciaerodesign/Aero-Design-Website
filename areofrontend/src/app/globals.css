@@ -585,6 +585,78 @@ body::selection {
   margin-top: 0.55rem;
 }
 
+.org-archive {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.org-archive summary {
+  display: flex;
+  cursor: pointer;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.4rem;
+  transition: background 180ms ease;
+}
+
+.org-archive summary::-webkit-details-marker {
+  display: none;
+}
+
+.org-archive summary:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.org-archive summary h3 {
+  margin-top: 0.65rem;
+  font-size: clamp(1.45rem, 1.25rem + 0.7vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.org-archive-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.org-archive-icon {
+  display: grid;
+  height: 2rem;
+  width: 2rem;
+  place-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 214, 96, 0.45);
+  color: #ffd660;
+  transition: transform 180ms ease;
+}
+
+.org-archive[open] .org-archive-icon {
+  transform: rotate(45deg);
+}
+
+.org-archive-content {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.4rem;
+}
+
+@media (max-width: 639px) {
+  .org-archive summary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 .subteam-grid {
   display: grid;
   gap: 1rem;
@@ -770,6 +842,11 @@ body::selection {
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: #ffffff;
   padding: 1.4rem;
+}
+
+.sponsor-logo-wrap[data-theme="dark"] {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: #06132b;
 }
 
 .sponsor-logo {

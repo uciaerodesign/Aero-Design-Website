@@ -88,9 +88,14 @@ export const subteamOverviews = [
       "The manufacturing subteam is responsible for turning the aircraft design into a competition-ready plane. We ensure high standards throughout the build process by designing and fabricating assembly jigs and fixtures, creating and applying GD&T principles to produce accurate, repeatable components. The team also develops and executes testing procedures, research and development to improve manufacturing methods, and works closely with other subteams to ensure the final aircraft is built efficiently and to specification.",
   },
   {
-    name: "Structures",
+    name: "Structures (F)",
     overview:
       "The structures (fuselage) sub-team is responsible for our aircraft's main body, cargo bay, electronics bay, steering system, and landing gear: adhering to annual competition specs, aerodynamic constraints, and DFM/DFA principles. We optimize and validate our design's structural integrity under both flight and ground loads using FEA and classical stress analysis before handing off our technical drawings to manufacturing.",
+  },
+  {
+    name: "Structures (W&T)",
+    overview:
+      "The structures wing and tail subteam is responsible for designing the aircraft's internal wing and tail members within competition constraints and aerodynamic requirements. This includes rib layouts for the selected airfoil, truss, spar, and stringer design, and integration with propulsion and control systems. Members verify structural integrity with FEA, support manufacturing after the design is complete, and provide build guidance for their designs.",
   },
   {
     name: "Operations",
@@ -164,11 +169,11 @@ export const orgChart = [
     groups: [
       {
         title: "Structures F Engineers",
-        names: ["Athaliah Franklin", "Kaireese Monroy", "Ricardo Vera", "Ethan Lee"],
+        names: ["Preston Hariadi", "Elina Nazhadi", "Samantha Esparza", "Abhinaav Balaji"],
       },
       {
         title: "Structures W&T Engineers",
-        names: ["Preston Hariadi", "Elina Nazhadi", "Samantha Esparza", "Abhinaav Balaji"],
+        names: ["Athaliah Franklin", "Kaireese Monroy", "Ricardo Vera", "Ethan Lee"],
       },
       {
         title: "Manufacturing Engineers",
@@ -218,37 +223,37 @@ export const journeyTabs = [
 export const newsItems = [
   {
     label: "Instagram",
-    date: "Latest",
-    title: "Latest Instagram Update",
+    date: "October 20, 2026",
+    title: "Welcome, Mach Industries",
     summary:
-      "Follow the team's newest shop, flight-test, recruitment, and behind-the-scenes updates on Instagram.",
-    imageSrc: "/media/news-photo-1a.jpeg",
-    imageAlt: "Aero Design competition photo",
-    href: instagramUrl,
+      "Aero Design welcomed Mach Industries as a supporter for the 2026-2027 season and thanked the company for supporting the next generation of engineers.",
+    imageSrc: "/media/news-instagram-mach.jpg",
+    imageAlt: "Aero Design at UCI graphic from the Mach Industries sponsor announcement",
+    href: "https://www.instagram.com/aerodesignuci/p/DeudMi8OjYy/",
   },
   {
     label: "Instagram",
-    date: "Latest",
-    title: "Recent Instagram Field Notes",
+    date: "October 19, 2026",
+    title: "Something Big Is Landing",
     summary:
-      "See recent visuals from Aero Design as the team documents aircraft progress and student work.",
-    imageSrc: "/media/journey-plane-build.jpeg",
-    imageAlt: "Aero Design members building the aircraft frame",
-    href: instagramUrl,
+      "The team shared a preview of a new October announcement and invited followers to watch for what comes next.",
+    imageSrc: "/media/news-instagram-teaser.jpg",
+    imageAlt: "October teaser graphic from Aero Design at UCI",
+    href: "https://www.instagram.com/aerodesignuci/p/DesJROAyB6K/",
   },
   {
     label: "Instagram",
-    date: "Latest",
-    title: "Recent Instagram Team Moments",
+    date: "October 16, 2026",
+    title: "Cross-ESO Symposium",
     summary:
-      "Catch the newest social posts from team meetings, build sessions, and competition preparation.",
-    imageSrc: "/media/team-members.jpeg",
-    imageAlt: "Aero Design team members standing beside their aircraft",
-    href: instagramUrl,
+      "Aero Design showcased its aircraft, met other engineering students, and introduced visitors to the team's work at the Cross-ESO Symposium.",
+    imageSrc: "/media/news-instagram-symposium.jpg",
+    imageAlt: "Students visiting the Aero Design booth at the Cross-ESO Symposium",
+    href: "https://www.instagram.com/aerodesignuci/p/DekCzvHmo8j/",
   },
   {
     label: "LinkedIn",
-    date: "Latest",
+    date: "Newest LinkedIn Update",
     title: "National Intern Day Member Spotlight",
     summary:
       "Aero Design celebrated members Andrew Zhang, Samantha Esparza, Eva Maya, Annie Dinh, and Smaran Mishra for their internship work.",
@@ -258,10 +263,10 @@ export const newsItems = [
   },
   {
     label: "LinkedIn",
-    date: "Latest",
-    title: "Alumni And Member Achievement Updates",
+    date: "Recent LinkedIn Update",
+    title: "Matthew Madrid Heads to Stanford",
     summary:
-      "Recent LinkedIn posts highlight Aero Design members and alumni taking the next step in aerospace, graduate school, and engineering.",
+      "The team celebrated Matthew Madrid's next chapter: a Mechanical Engineering Ph.D. at Stanford and a graduate internship at Lawrence Livermore National Laboratory.",
     imageSrc: "/media/news-photo-1d.jpeg",
     imageAlt: "Aero Design flight line photo",
     href: linkedInUrl,
@@ -289,7 +294,22 @@ export const sponsorGroups = [
         name: "Liquid I.V.",
         type: "Hydration Partner",
         logo: "/media/sponsors/liquid-iv.svg",
+        logoTheme: "dark",
         href: "https://www.liquid-iv.com/",
+      },
+      {
+        name: "Mach Industries",
+        type: "Aerospace & Defense",
+        logo: "/media/sponsors/mach-industries.svg",
+        logoTheme: "dark",
+        href: "https://machindustries.com/",
+      },
+      {
+        name: "Ampaire",
+        type: "Hybrid-Electric Aviation",
+        logo: "/media/sponsors/ampaire.png",
+        logoTheme: "dark",
+        href: "https://www.ampaire.com/",
       },
     ],
   },
@@ -360,7 +380,7 @@ export const contactLinks = [
     title: "News Sign-Up Link",
     description: "Sign up for the latest updates from the team.",
     href: signUpLink,
-    action: "Sign Up To Join",
+    action: "Sign Up to Join",
   },
   {
     label: "Feedback",

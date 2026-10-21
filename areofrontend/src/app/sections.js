@@ -163,36 +163,43 @@ export function TeamSection() {
       </div>
 
       <div className="mx-auto mt-12 max-w-6xl sm:mt-16">
-        <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="card-kicker">Organization Chart</p>
-            <h3 className="mt-3 text-2xl font-semibold tracking-[0.04em] text-white sm:text-3xl">
-              2026-2027 Team Structure
-            </h3>
-          </div>
-          <p className="max-w-xl text-sm leading-7 text-white/64">
-            A snapshot of how the program, chief engineers, and subteam leads
-            coordinate the aircraft cycle.
-          </p>
-        </div>
-
-        <div className="org-chart">
-          {orgChart.map((row) => (
-            <div className="org-row" key={row.level}>
-              <p className="org-level">{row.level}</p>
-              <div className="org-groups">
-                {row.groups.map((group, groupIndex) => (
-                  <article className="org-node" key={`${row.level}-${group.title}-${groupIndex}`}>
-                    <h4>{group.title}</h4>
-                    {group.names.map((name) => (
-                      <p key={name}>{name}</p>
-                    ))}
-                  </article>
-                ))}
-              </div>
+        <details className="org-archive">
+          <summary>
+            <div>
+              <p className="card-kicker">Organization Chart</p>
+              <h3>Archive Team Structure</h3>
             </div>
-          ))}
-        </div>
+            <span className="org-archive-action">
+              View 2026-2027 structure
+              <span className="org-archive-icon" aria-hidden="true">+</span>
+            </span>
+          </summary>
+
+          <div className="org-archive-content">
+            <p className="max-w-xl text-sm leading-7 text-white/64">
+              A snapshot of how the program, chief engineers, and subteam leads
+              coordinate the aircraft cycle.
+            </p>
+
+            <div className="org-chart mt-7">
+              {orgChart.map((row) => (
+                <div className="org-row" key={row.level}>
+                  <p className="org-level">{row.level}</p>
+                  <div className="org-groups">
+                    {row.groups.map((group, groupIndex) => (
+                      <article className="org-node" key={`${row.level}-${group.title}-${groupIndex}`}>
+                        <h4>{group.title}</h4>
+                        {group.names.map((name) => (
+                          <p key={name}>{name}</p>
+                        ))}
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </details>
       </div>
 
       <div className="mx-auto mt-12 max-w-6xl sm:mt-16">
@@ -202,7 +209,7 @@ export function TeamSection() {
             2026-2027 Leads
           </h3>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {teamLeaders.map((member) => (
             <article key={member.name} className="leader-card">
               <div className="leader-photo">
@@ -269,6 +276,11 @@ export function JourneySection() {
           </div>
 
           <div className="grid gap-6">
+            <MediaFrame>
+              <video className="aspect-[16/10] h-full w-full object-cover" controls playsInline preload="metadata">
+                <source src="/media/project-1-video.mp4" type="video/mp4" />
+              </video>
+            </MediaFrame>
             <div className="grid gap-6 sm:grid-cols-2">
               <MediaFrame>
                 <Image
@@ -309,11 +321,6 @@ export function JourneySection() {
                 />
               </MediaFrame>
             </div>
-            <MediaFrame>
-              <video className="aspect-[16/10] h-full w-full object-cover" controls playsInline preload="metadata">
-                <source src="/media/project-1-video.mp4" type="video/mp4" />
-              </video>
-            </MediaFrame>
           </div>
         </div>
       </div>
@@ -393,10 +400,10 @@ export function SponsorsSection() {
                 <p>{group.summary}</p>
               </div>
 
-              <div className="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              <div className={`mt-5 grid gap-5 md:grid-cols-2 ${group.sponsors.length === 5 ? "lg:grid-cols-5" : "lg:grid-cols-4"}`}>
                 {group.sponsors.map((sponsor) => (
                   <a key={`${group.season}-${sponsor.name}`} href={sponsor.href} target="_blank" rel="noopener noreferrer" className="sponsor-card group">
-                    <div className="sponsor-logo-wrap">
+                    <div className="sponsor-logo-wrap" data-theme={sponsor.logoTheme || "light"}>
                       <Image
                         src={sponsor.logo}
                         alt={`${sponsor.name} logo`}
@@ -438,15 +445,15 @@ export function SponsorUsSection() {
           <p className="section-kicker">SPONSOR US</p>
           <h2 className="section-title">Fuel The Innovation Of Tomorrow&apos;s Aerospace Leaders</h2>
           <p className="body-copy">
-            Partner with Aero Design and directly support the next generation of
-            engineers. Your investment provides our team with the cutting-edge
-            materials, manufacturing resources, and software needed to push the
-            boundaries of UAV technology.
+            Partner with Aero Design and support the students who design, build,
+            test, and fly our competition aircraft. Sponsorship helps us purchase
+            materials, manufacture custom parts, access engineering software, and
+            travel to SAE Aero Design West.
           </p>
           <p className="body-copy mt-4">
-            By sponsoring us, you aren&apos;t just funding an aircraft - you are
-            empowering students to innovate, compete, and lead the future of
-            aviation.
+            Your support gives students hands-on engineering experience while
+            helping the team turn a complete aircraft design into a reliable,
+            flight-ready build.
           </p>
           <p className="mt-6 text-lg font-semibold tracking-[0.04em] text-white sm:text-xl">
             If interested?
