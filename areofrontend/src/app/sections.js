@@ -1,6 +1,8 @@
 import Image from "next/image";
 import ContactForm from "./ContactForm";
 import MobileNav from "./MobileNav";
+import ScrollReveal from "./ScrollReveal";
+import TeamStats from "./TeamStats";
 import {
   contactLinks,
   journeyTabs,
@@ -73,30 +75,34 @@ export function IntroSection() {
   return (
     <section className="section-shell" id="intro">
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
-        <MediaFrame>
-          <Image
-            src="/media/team-photo.JPG"
-            alt="Aero Design team standing behind their aircraft"
-            width={1158}
-            height={772}
-            className="h-full w-full object-cover"
-          />
-        </MediaFrame>
+        <ScrollReveal direction="left" className="lg:order-1">
+          <div>
+            <p className="section-kicker">INTRO</p>
+            <h2 className="section-title">Undergraduate Aircraft Design At UCI</h2>
+            <p className="body-copy">
+              Aero Design is an undergraduate project team at the University of
+              California, Irvine that designs, builds, and flies electric
+              remote-controlled aircraft for SAE Aero Design West.
+            </p>
+            <p className="body-copy mt-4">
+              The team focuses on heavy-lift performance, Short Takeoff and Landing
+              efficiency, flight testing, manufacturing, and the hands-on systems
+              work that turns a student concept into a competition aircraft.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div>
-          <p className="section-kicker">INTRO</p>
-          <h2 className="section-title">Undergraduate Aircraft Design At UCI</h2>
-          <p className="body-copy">
-            Aero Design is an undergraduate project team at the University of
-            California, Irvine that designs, builds, and flies electric
-            remote-controlled aircraft for SAE Aero Design West.
-          </p>
-          <p className="body-copy mt-4">
-            The team focuses on heavy-lift performance, Short Takeoff and Landing
-            efficiency, flight testing, manufacturing, and the hands-on systems
-            work that turns a student concept into a competition aircraft.
-          </p>
-        </div>
+        <ScrollReveal direction="right" className="lg:order-2">
+          <MediaFrame>
+            <Image
+              src="/media/team-photo.JPG"
+              alt="Aero Design team standing behind their aircraft"
+              width={1158}
+              height={772}
+              className="h-full w-full object-cover"
+            />
+          </MediaFrame>
+        </ScrollReveal>
       </div>
     </section>
   );
@@ -130,36 +136,52 @@ export function SubteamsSection() {
 }
 
 export function TeamSection() {
+  const teamMemberCount = new Set(
+    orgChart.flatMap((row) =>
+      row.groups
+        .filter((group) => !group.title.toLowerCase().includes("advisor"))
+        .flatMap((group) => group.names),
+    ),
+  ).size;
+
   return (
     <section className="section-shell" id="team">
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-        <div>
-          <p className="section-kicker">THE TEAM</p>
-          <h2 className="section-title">The Students Behind The Aircraft</h2>
-          <p className="body-copy">
-            Aero Design is led by student engineers and operators who turn ideas
-            into a competition-ready aircraft. Our leaders coordinate design,
-            manufacturing, testing, logistics, and outreach across every stage of
-            the build season.
-          </p>
-          <p className="body-copy mt-4">
-            Meet the team leaders guiding Zot Force One and the next generation of
-            UCI aircraft.
-          </p>
-          <a href="/contact" className="inline-flex-button mt-7">
-            Contact The Team
-          </a>
-        </div>
+        <ScrollReveal direction="left">
+          <div>
+            <p className="section-kicker">THE TEAM</p>
+            <h2 className="section-title">The Students Behind The Aircraft</h2>
+            <p className="body-copy">
+              Aero Design is led by student engineers and operators who turn ideas
+              into a competition-ready aircraft. Our leaders coordinate design,
+              manufacturing, testing, logistics, and outreach across every stage of
+              the build season.
+            </p>
+            <p className="body-copy mt-4">
+              Meet the team leaders guiding Zot Force One and the next generation of
+              UCI aircraft.
+            </p>
+            <a href="/contact" className="inline-flex-button mt-7">
+              Contact The Team
+            </a>
+          </div>
+        </ScrollReveal>
 
-        <MediaFrame>
-          <Image
-            src="/media/team-members.jpeg"
-            alt="Aero Design team members standing beside their aircraft"
-            width={576}
-            height={768}
-            className="h-full w-full object-cover"
-          />
-        </MediaFrame>
+        <ScrollReveal direction="right">
+          <MediaFrame>
+            <Image
+              src="/media/team-members.jpeg"
+              alt="Aero Design team members standing beside their aircraft"
+              width={576}
+              height={768}
+              className="h-full w-full object-cover"
+            />
+          </MediaFrame>
+        </ScrollReveal>
+      </div>
+
+      <div className="mx-auto mt-12 max-w-6xl sm:mt-16">
+        <TeamStats members={teamMemberCount} subteams={subteamOverviews.length} />
       </div>
 
       <div className="mx-auto mt-12 max-w-6xl sm:mt-16">
@@ -378,45 +400,58 @@ export function SponsorsSection() {
   return (
     <section className="section-shell" id="sponsors">
       <div className="mx-auto max-w-6xl">
-        <p className="section-kicker">SPONSORS</p>
-        <div className="mt-4 max-w-3xl">
-          <h2 className="section-title">Partners Supporting Aero Design</h2>
-          <p className="body-copy">
-            These accepted sponsors help Aero Design turn student-built aircraft
-            concepts into flight-ready competition hardware across each build
-            season.
-          </p>
-        </div>
+        <ScrollReveal direction="left">
+          <div>
+            <p className="section-kicker">SPONSORS</p>
+            <div className="mt-4 max-w-3xl">
+              <h2 className="section-title">Partners Supporting Aero Design</h2>
+              <p className="body-copy">
+                These accepted sponsors help Aero Design turn student-built aircraft
+                concepts into flight-ready competition hardware across each build
+                season.
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
 
         <div className="mt-10 grid gap-10">
-          {sponsorGroups.map((group) => (
+          {sponsorGroups.map((group, groupIndex) => (
             <div className="sponsor-season" key={group.season}>
               <div className="sponsor-roadmap-dot" aria-hidden="true" />
-              <div className="sponsor-season-heading">
-                <div>
-                  <p className="card-kicker">Roadmap</p>
-                  <h3>{group.season}</h3>
+              <ScrollReveal direction="left" delay={groupIndex * 100}>
+                <div className="sponsor-season-heading">
+                  <div>
+                    <p className="card-kicker">Roadmap</p>
+                    <h3>{group.season}</h3>
+                  </div>
+                  <p>{group.summary}</p>
                 </div>
-                <p>{group.summary}</p>
-              </div>
+              </ScrollReveal>
 
               <div className={`mt-5 grid gap-5 md:grid-cols-2 ${group.sponsors.length === 5 ? "lg:grid-cols-5" : "lg:grid-cols-4"}`}>
-                {group.sponsors.map((sponsor) => (
-                  <a key={`${group.season}-${sponsor.name}`} href={sponsor.href} target="_blank" rel="noopener noreferrer" className="sponsor-card group">
-                    <div className="sponsor-logo-wrap" data-theme={sponsor.logoTheme || "light"}>
-                      <Image
-                        src={sponsor.logo}
-                        alt={`${sponsor.name} logo`}
-                        width={320}
-                        height={120}
-                        className="sponsor-logo"
-                      />
-                    </div>
-                    <p className="card-kicker mt-6">{sponsor.type}</p>
-                    <h4 className="mt-3 text-xl font-semibold tracking-[0.04em] text-white">
-                      {sponsor.name}
-                    </h4>
-                  </a>
+                {group.sponsors.map((sponsor, sponsorIndex) => (
+                  <ScrollReveal
+                    key={`${group.season}-${sponsor.name}`}
+                    direction="up"
+                    delay={sponsorIndex * 90}
+                    className="h-full"
+                  >
+                    <a href={sponsor.href} target="_blank" rel="noopener noreferrer" className="sponsor-card group h-full">
+                      <div className="sponsor-logo-wrap" data-theme={sponsor.logoTheme || "light"}>
+                        <Image
+                          src={sponsor.logo}
+                          alt={`${sponsor.name} logo`}
+                          width={320}
+                          height={120}
+                          className="sponsor-logo"
+                        />
+                      </div>
+                      <p className="card-kicker mt-6">{sponsor.type}</p>
+                      <h4 className="mt-3 text-xl font-semibold tracking-[0.04em] text-white">
+                        {sponsor.name}
+                      </h4>
+                    </a>
+                  </ScrollReveal>
                 ))}
               </div>
             </div>
@@ -431,37 +466,41 @@ export function SponsorUsSection() {
   return (
     <section className="section-shell" id="sponsor-us">
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-        <MediaFrame>
-          <Image
-            src="/media/team-photo.JPG"
-            alt="Aero Design team and aircraft"
-            width={1158}
-            height={772}
-            className="h-full w-full object-cover"
-          />
-        </MediaFrame>
-
-        <div>
-          <p className="section-kicker">SPONSOR US</p>
-          <h2 className="section-title">Fuel The Innovation Of Tomorrow&apos;s Aerospace Leaders</h2>
-          <p className="body-copy">
-            Partner with Aero Design and support the students who design, build,
-            test, and fly our competition aircraft. Sponsorship helps us purchase
-            materials, manufacture custom parts, access engineering software, and
-            travel to SAE Aero Design West.
-          </p>
-          <p className="body-copy mt-4">
-            Your support gives students hands-on engineering experience while
-            helping the team turn a complete aircraft design into a reliable,
-            flight-ready build.
-          </p>
-          <p className="mt-6 text-lg font-semibold tracking-[0.04em] text-white sm:text-xl">
-            If interested?
-          </p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <a href="/contact" className="inline-flex-button">Partner With Us</a>
+        <ScrollReveal direction="left" className="lg:order-1">
+          <div>
+            <p className="section-kicker">SPONSOR US</p>
+            <h2 className="section-title">Fuel The Innovation Of Tomorrow&apos;s Aerospace Leaders</h2>
+            <p className="body-copy">
+              Partner with Aero Design and support the students who design, build,
+              test, and fly our competition aircraft. Sponsorship helps us purchase
+              materials, manufacture custom parts, access engineering software, and
+              travel to SAE Aero Design West.
+            </p>
+            <p className="body-copy mt-4">
+              Your support gives students hands-on engineering experience while
+              helping the team turn a complete aircraft design into a reliable,
+              flight-ready build.
+            </p>
+            <p className="mt-6 text-lg font-semibold tracking-[0.04em] text-white sm:text-xl">
+              If interested?
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a href="/contact" className="inline-flex-button">Partner With Us</a>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="right" className="lg:order-2">
+          <MediaFrame>
+            <Image
+              src="/media/team-photo.JPG"
+              alt="Aero Design team and aircraft"
+              width={1158}
+              height={772}
+              className="h-full w-full object-cover"
+            />
+          </MediaFrame>
+        </ScrollReveal>
       </div>
     </section>
   );
@@ -471,27 +510,33 @@ export function ContactSection() {
   return (
     <section className="section-shell" id="contact">
       <div className="mx-auto max-w-6xl">
-        <p className="section-kicker">CONTACT</p>
-        <div className="mt-4 max-w-2xl">
-          <h2 className="section-title">Stay Connected With Aero Design</h2>
-          <p className="body-copy">
-            Follow the team, send direct inquiries, or start a sponsorship
-            conversation with the people keeping the aircraft program moving.
-          </p>
-        </div>
+        <ScrollReveal direction="left">
+          <div>
+            <p className="section-kicker">CONTACT</p>
+            <div className="mt-4 max-w-2xl">
+              <h2 className="section-title">Stay Connected With Aero Design</h2>
+              <p className="body-copy">
+                Follow the team, send direct inquiries, or start a sponsorship
+                conversation with the people keeping the aircraft program moving.
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {contactLinks.map((link) => (
-            <a key={link.title} href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined} className="link-card group">
-              <p className="card-kicker">{link.label}</p>
-              <h3 className="mt-3 text-xl font-semibold tracking-[0.04em] text-white sm:mt-4 sm:text-2xl">
-                {link.title}
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-white/72 sm:mt-4">{link.description}</p>
-              <p className="mt-5 text-xs font-medium uppercase tracking-[0.2em] text-[#ffd660] transition group-hover:text-white">
-                {link.action}
-              </p>
-            </a>
+          {contactLinks.map((link, linkIndex) => (
+            <ScrollReveal key={link.title} direction="up" delay={(linkIndex % 2) * 110} className="h-full">
+              <a href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined} className="link-card group block h-full">
+                <p className="card-kicker">{link.label}</p>
+                <h3 className="mt-3 text-xl font-semibold tracking-[0.04em] text-white sm:mt-4 sm:text-2xl">
+                  {link.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-white/72 sm:mt-4">{link.description}</p>
+                <p className="mt-5 text-xs font-medium uppercase tracking-[0.2em] text-[#ffd660] transition group-hover:text-white">
+                  {link.action}
+                </p>
+              </a>
+            </ScrollReveal>
           ))}
         </div>
 

@@ -383,9 +383,9 @@ export const contactLinks = [
     action: "Sign Up to Join",
   },
   {
-    label: "Feedback",
+    label: "Feedback · 2026-2027",
     title: "Zhiyuan Rong",
-    description: "For feedback about the Aero Design website, email Zhiyuan Rong.",
+    description: "For 2026-2027 feedback about the Aero Design website, email Zhiyuan Rong.",
     href: "mailto:zhiyuar2@uci.edu",
     action: "Email Zhiyuan Rong",
   },
